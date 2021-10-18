@@ -5,12 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="capçalera.css" rel="stylesheet" type="text/css">
     <title>Validacio</title>
     <script src="js/validate.js"></script>
 
+    <header>
+        <div class="header-container">
+            <div id="logo"><img src="css\logo.png" width="85px" height="85px"></div> 
+            <div id="C">
+                <p>CANTINA</p>  
+                <p>INSTITUT</p>
+                <p>PEDRALBES</p>
+            </div>
+        </div>
+    </header>
+
 </head>
 <body>
-    <h1>Validacio de la compra</h1>
+
+    <div class="cuerpo">
+      <h1>Validacio de la compra</h1>
+    </div>
+    
 
 
     <form method="POST" action="validar.php" name = "dades" onsubmit = "return validate()" onsubmit = "">
@@ -98,4 +114,18 @@ function potscomprar($token){
 
 
 </body>
+
+      <footer>
+        <div class="footer-container">
+            <div id="email">
+                <p>Contáctanos:</p>
+            </div>
+            <div id="email">
+                <p>a20servilrac@inspedralbes.cat</p>
+                <p>a17chetrupos@inspedralbes.cat</p>
+                <p>a19axechacan@inspedralbes.cat</p>
+            </div>
+        </div>
+    </footer>
+
 </html>
