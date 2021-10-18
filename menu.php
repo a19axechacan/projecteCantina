@@ -74,7 +74,7 @@
                    ";
     }
     
-    $form .= "<input type='hidden' id ='json'>";
+    $form .= "<input type='hidden' id ='json' name='comanda'>";
 
     echo "<form id='formMenu' action='validacio.php' method='get'> ". $form . " <button type='button' id='comprar'>Comprar </button>  </form>";
     ?>
