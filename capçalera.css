@@ -3,8 +3,7 @@ html {
 }
 
 body {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin: 0;
     padding: 0;
 }
 
@@ -14,8 +13,8 @@ header {
 }
 
 #cuerpo {
-    margin-left: 75px;
-    margin-right: 75px;
+    margin-left: 100px;
+    margin-right: 100px;
     margin-top: 50px;
     margin-bottom: 100px;
 }
@@ -24,7 +23,9 @@ footer {
     color: #f4f9f9;
     background-color: #aaaaaa;
     padding: 10px;
-    
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .header-container {
@@ -35,6 +36,11 @@ footer {
 
 #C {
     text-align: center;
+}
+
+#logo {
+    margin-left: 25px;
+    margin-top: 15px;
 }
 
 .footer-container {
