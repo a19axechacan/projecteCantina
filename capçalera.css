@@ -30,12 +30,17 @@ footer {
 
 .header-container {
     display: grid;
-    grid-template-columns: auto 250px;
+    grid-template-columns: 150px auto 250px;
     grid-gap: 10px;
 }
 
 #C {
+    text-align: left;
+}
+
+#M {
     text-align: center;
+    margin-top: 15px;
 }
 
 #logo {
