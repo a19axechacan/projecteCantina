@@ -30,12 +30,7 @@
           </tr>
 
             <tr>
-                <td align="RIGHT" colspan="3"><input type="hidden" name="json" size="25" value="{'employees':[
-                    {'name':'Ram', 'email':'ram@gmail.com', 'age':23},
-                    {'name':'Shyam', 'email':'shyam23@gmail.com', 'age':28},
-                    {'name':'John', 'email': 'john@gmail.com', 'age':33},
-                    {'name':'Bob', 'email':'bob32@gmail.com', 'age':41}
-                    ]}" ></td>
+                <td align="RIGHT" colspan="3"><input type="hidden" name="json" size="25" value="" ></td>
             </tr>
           </Table>
 
@@ -50,6 +45,56 @@
 
     <a href="menu.php">canviar compra</a><br>
     <a href="finalitzacio.php">comprar</a>
+
+
+
+    <?php 
+
+
+
+
+$nombre = $_POST["nombre"];
+$email = $_POST["email"];
+$telefono = $_POST["telefono"];
+$json = $_GET["comanda"];
+
+
+
+
+validacio($nombre, $email, $telefono, $json);
+$obj = var_dump(json_decode($json,true));
+print_r ($obj);
+
+
+
+
+
+
+
+function validacio($nombre, $email, $telefono, $json){
+
+echo $nombre;
+
+
+echo $email;
+echo $telefono;
+}
+
+
+
+
+
+function potscomprar($token){
+    if($token == false){
+        return true;
+    }
+    return false;
+}
+
+
+
+?>
+
 
 
 </body>
