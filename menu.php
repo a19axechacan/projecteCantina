@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>menu</h1>
+    <a href="validacio.php">IR A COMPRAR</a>
 </body>
 </html>

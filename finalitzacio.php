@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>Finalitzacio de la Comanda</h1>
+    <a href="menu.php">Pantalla inicio</a>
 </body>
 </html>
