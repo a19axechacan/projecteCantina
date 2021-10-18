@@ -23,7 +23,7 @@
 <body>
     <div class="cuerpo">
         <h1>menu</h1>
-    </div>
+    
     
     
 
@@ -92,7 +92,7 @@
 
     echo "<form id='formMenu' action='validacio.php' method='get'> ". $form . " <button type='button' id='comprar'>Comprar </button>  </form>";
     ?>
-
+</div>
 </body>
     
     <footer>

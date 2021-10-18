@@ -25,7 +25,7 @@
 
     <div class="cuerpo">
       <h1>Validacio de la compra</h1>
-    </div>
+    
     
 
 
@@ -112,7 +112,7 @@ function potscomprar($token){
 ?>
 
 
-
+</div>
 </body>
 
       <footer>
