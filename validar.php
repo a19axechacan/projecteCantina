@@ -23,13 +23,14 @@
 $nombre = $_POST["nombre"];
 $email = $_POST["email"];
 $telefono = $_POST["telefono"];
-$json = $_POST["json"];
-$obj = null;
+$json = $_GET["comanda"];
+
+echo $json;
+
 
 
 validacio($nombre, $email, $telefono, $json);
-$obj = var_dump(json_decode($json, true));
-print $obj;
+
 
 
 
