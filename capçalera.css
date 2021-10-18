@@ -1,0 +1,48 @@
+html {
+    background-color: #ffffff;
+}
+
+body {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 0;
+}
+
+header {
+    background-color: #a4ebf3;
+    padding: 10px;
+}
+
+#cuerpo {
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+footer {
+    color: #f4f9f9;
+    background-color: #aaaaaa;
+    padding: 10px;
+    
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: auto 250px;
+    grid-gap: 10px;
+}
+
+#C {
+    text-align: center;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+}
+
+#email {
+    text-align: start;
+}
