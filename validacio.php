@@ -8,5 +8,9 @@
 </head>
 <body>
     <h1>validacio</h1>
+    <a href="menu.php">canviar compra</a><br>
+    <a href="finalitzacio.php">comprar</a>
+
+
 </body>
 </html>
