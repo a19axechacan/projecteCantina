@@ -14,15 +14,11 @@
 
 </head>
 <body>
-    <div class="cuerpo">
-        <div class="404-container">
-            <div id="4">4</div>
-            <div id="D"><a><img src="css\carrito.png" width="150px" height="150px"></a></div>
-            <div id="4">4</div>
-        </div>
-    
+    <div class="cuerpo"> 
         <div id="O">
-            <h1>Oops</h1>
+        <a><img src="css\error.png" width="150px" height="150px"></a> 
+            <h1>Sembla que ja has fet una compra avui</h1>
+            <h2>Torna demà per fer una altre compra</h2>
         </div>
         
     </div>
