@@ -98,7 +98,7 @@
     $form .= "<div id='menuTarde'>";
     $form.= writeMenu($menuTarde);
     $form.= "</div>";
-    $form .= "<input type='hidden' id ='horari' name='horari'>";
+    $form .= "<input type='hidden' id ='horariDia' name='horariDia'>";
 
     echo "<form id='formMenu' action='validacio.php' method='get'> " . $form . " <button type='button' id='comprar'>Comprar </button>  </form>";
 
