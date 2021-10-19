@@ -1,6 +1,19 @@
 window.onload = function () {
 
 
+    
+
+
+
+
+
+
+
+
+
+
+
+
     document.getElementById("formMenu").addEventListener("click", function (e) {
 
         if (e.target.classList.contains("suma")) {
@@ -13,6 +26,17 @@ window.onload = function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+/*
     let buttonComprar = document.getElementById("comprar");
 
     buttonComprar.addEventListener('click', function () {
@@ -39,7 +63,7 @@ window.onload = function () {
         document.getElementById("json").value = json;
         document.getElementById("formMenu").submit();
 
-    });
+    });*/
 
 
 
