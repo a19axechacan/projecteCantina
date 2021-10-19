@@ -94,7 +94,7 @@
             $form .= "  <div id=" . $element['id'] . ">" . "
                     <label for=" . $element['id'] . ">" . $element['nom'] . ":</label>
                 <button type='button' class='resta'>-</button> 
-                <input type='text' id=" . $element['id'] . " name='" . $element['id'] . "' value='0'>
+                <input type='text' id=" . $element['id'] . " name='" . $element['id'] .  "' value='0'   class='coger'>
                 <button type='button' class='suma'>+</button> 
                 <br><br>
                 </div>
@@ -110,7 +110,7 @@
         <div id="menu">
             <p>
                 <?php
-                    echo "<form id='formMenu' action='validacio.php' method='get'> " . $form . " <button type='submit' id='comprar'>Comprar </button>  </form>";
+                    echo "<form id='formMenu' action='validacio.php' method='post'> " . $form . " <button type='submit' id='comprar'>Comprar </button>  </form>";
                 ?>
             </p>
         </div>
