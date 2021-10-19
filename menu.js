@@ -1,6 +1,23 @@
 window.onload = function () {
 
 
+    let hora = new Date().getHours();
+    let minutes = new Date().getMinutes();
+
+
+
+    if(hora<11&&minutes<30){
+        document.getElementById("horariDia").value = true;
+        document.getElementById("menuTarde").style.display="none";
+    }else {
+        document.getElementById("horariDia").value = false;
+        document.getElementById("menuDia").style.display="none";
+    }
+
+
+
+
+
     document.getElementById("formMenu").addEventListener("click", function (e) {
 
         if (e.target.classList.contains("suma")) {
@@ -13,6 +30,17 @@ window.onload = function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+/*
     let buttonComprar = document.getElementById("comprar");
 
     buttonComprar.addEventListener('click', function () {
@@ -39,7 +67,7 @@ window.onload = function () {
         document.getElementById("json").value = json;
         document.getElementById("formMenu").submit();
 
-    });
+    });*/
 
 
 
