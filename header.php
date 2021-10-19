@@ -1,6 +1,6 @@
 <header>
     <div class="header-container">
-        <div><img id="logo" src="css\logo.png" width="100px" height="100px"></div> 
+        <div><a href="index.php"><img id="logo" src="css\logo.png" width="100px" height="100px"></a></div> 
         <div id="C">
             <p>CANTINA</p>  
             <p>INSTITUT</p>
