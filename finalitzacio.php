@@ -25,10 +25,27 @@
 </head>
 <body>
     <div class="cuerpo">
-        <h1>Finalitzacio de la Comanda</h1>
-        <a href="menu.php">Pantalla inicio</a>
-    </div>
-    
+        <h1>Comanda confirmada</h1>
+           </div>
+
+
+
+    <?php
+    $options = array (
+        'expires' => time() + 86400,
+        'path' => '/',
+        'secure' => true,
+        'samesite' => 'Lax'
+    );
+    setcookie('ultimaCompra', time(), $options);
+    ?>
+
+
+
+
+
+
+
 </body>
 
     <footer>
