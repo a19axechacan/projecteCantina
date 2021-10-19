@@ -25,10 +25,92 @@
 </head>
 <body>
     <div class="cuerpo">
-        <h1>Finalitzacio de la Comanda</h1>
-        <a href="menu.php">Pantalla inicio</a>
-    </div>
-    
+        <h1>Comanda confirmada</h1>
+           </div>
+
+
+
+    <?php
+    $options = array (
+        'expires' => time() + 86400,
+        'path' => '/',
+        'secure' => true,
+        'samesite' => 'Lax'
+    );
+    setcookie('ultimaCompra', time(), $options);
+
+
+
+
+
+
+
+    $myFile = fopen("comandes", "a+");
+
+    $json = '{
+    "glossary": {
+        "title": "example glossary",
+		"GlossDiv": {
+            "title": "S",
+			"GlossList": {
+                "GlossEntry": {
+                    "ID": "SGML",
+					"SortAs": "SGML",
+					"GlossTerm": "Standard Generalized Markup Language",
+					"Acronym": "SGML",
+					"Abbrev": "ISO 8879:1986",
+					"GlossDef": {
+                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
+						"GlossSeeAlso": ["GML", "XML"]
+                    },
+					"GlossSee": "markup"
+                }
+            }
+        }
+    }
+}';
+
+    fwrite($myFile, $json);
+
+
+
+
+
+
+    fclose($myFile);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ?>
+
+
+
+
+
+
+
 </body>
 
     <footer>
