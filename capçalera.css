@@ -34,18 +34,29 @@ footer {
     grid-gap: 10px;
 }
 
+#logo {
+    margin-left: 25px;
+    margin-top: 25px;
+    text-align: center;
+}
+
 #C {
-    text-align: left;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 5px;
 }
 
 #M {
     text-align: center;
-    margin-top: 15px;
+    margin-top: auto;
 }
 
-#logo {
-    margin-left: 25px;
-    margin-top: 15px;
+#I {
+    color: #aaaaaa;
+}
+
+#T {
+    margin-top: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .footer-container {
