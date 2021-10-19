@@ -1,0 +1,47 @@
+.admin-container {
+    display: grid;
+    grid-template-columns: auto 200px;
+    grid-gap: 10px;
+}
+
+.CTA-container {
+    display: grid;
+    grid-template-columns: 730px 730px auto;
+    border-top-style: groove;
+    border-bottom-style: groove;
+}
+
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#obj {
+    text-align: center;
+}
+
+#CTA1 {
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-right-style: groove;
+}
+
+#CTA2 {
+    margin: 10px;
+    padding: 10px;
+}
+
+#CC {
+    margin: 10px;
+    padding: 10px;
+    text-align: end;
+    align-self: end;
+}
+
+#A {
+    text-align: center;
+}
+
+#admin {
+    margin-top: 0;
+}
