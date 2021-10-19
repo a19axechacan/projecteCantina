@@ -16,7 +16,7 @@
 <body>
     <div class="cuerpo">
         <div class="admin-container">
-            <h1 id="obj">LA MAYOR VARIEDAD DE PRODUCTOS</h1>
+            <h1 id="obj">LA MAJOR VARIETAT DE PRODUCTES</h1>
             <div id="A">
                 <a href="admin.html"><img src="css\admin.jpg" width="80px" height="80px"></a>
                 <p id="admin">Administració</p>

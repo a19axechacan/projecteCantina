@@ -1,7 +1,7 @@
 <footer>
         <div class="footer-container">
             <div id="email">
-                <p>Contáctanos:</p>
+                <p>Contactens:</p>
             </div>
             <div id="email">
                 <p>a20servilrac@inspedralbes.cat</p>
