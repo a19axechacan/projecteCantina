@@ -5,32 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="capçalera.css" rel="stylesheet" type="text/css">
+    <link href="menu.css" rel="stylesheet" type="text/css">
     <title>Menu</title>
     <script src="menu.js"></script>
 
-    <header>
-        <div class="header-container">
-            <div><img id="logo" src="css\logo.png" width="100px" height="100px"></div>
-            <div id="C">
-                <p>CANTINA</p>
-                <p>INSTITUT</p>
-                <p>PEDRALBES</p>
-            </div>
-            <div id="M">
-                <a href="menu.php"><img id="I" src="css\bolsa.jpg" width="82px" height="82px"></a>
-                <p id="T">Menú</p>
-            </div>
-        </div>
-    </header>
+    <?php
+    include("header.php");
+    ?>
 
 </head>
 <body>
 <div class="cuerpo">
     <h1>menu</h1>
 
-
     <?php
-
 
     $menu = [
         0 => [
@@ -100,41 +88,50 @@
     $form.= "</div>";
     $form .= "<input type='hidden' id ='horariDia' name='horariDia'>";
 
-    echo "<form id='formMenu' action='validacio.php' method='get'> " . $form . " <button type='submit' id='comprar'>Comprar </button>  </form>";
-
-
-
     function writeMenu($menu){
         $form="";
         foreach ($menu as $element) {
             $form .= "  <div id=" . $element['id'] . ">" . "
                     <label for=" . $element['id'] . ">" . $element['nom'] . ":</label>
-                   <button type='button' class='resta'>-</button> 
-                   <input type='text' id=" . $element['id'] . " name='" . $element['id'] . "' value='0'>
-                   <button type='button' class='suma'>+</button> 
-                   <br><br>
-                   </div>
-                   ";
+                <button type='button' class='resta'>-</button> 
+                <input type='text' id=" . $element['id'] . " name='" . $element['id'] . "' value='0'>
+                <button type='button' class='suma'>+</button> 
+                <br><br>
+                </div>
+                ";
         }
         return $form;
-
     }
-
+    
     ?>
+
+
+    <div class="menu-container">
+        <div id="menu">
+            <p>
+                <?php
+                    echo "<form id='formMenu' action='validacio.php' method='get'> " . $form . " <button type='submit' id='comprar'>Comprar </button>  </form>";
+                ?>
+            </p>
+        </div>
+        <div id="compra">
+            <h3 id=com>Tu Compra:</h3>
+            <hr>
+            <h4>Total gastat en entrpans de pernil:</h4>
+            <h4>Total gastat en entrpans de bacon:</h4>
+            <h4>Total gastat en Kit-Kat:</h4>
+            <h4>Total gastat en cafes amb llet:</h4>
+            <h4>Total gastat batuts de xoxolata:</h4>
+            <h4>Total gastat batuts de maduixa:</h4>
+            <h4 id="com">Total gastat:</h4>
+        </div>
+    </div>    
+
 </div>
 </body>
 
-<footer>
-    <div class="footer-container">
-        <div id="email">
-            <p>Contáctanos:</p>
-        </div>
-        <div id="email">
-            <p>a20servilrac@inspedralbes.cat</p>
-            <p>a17chetrupos@inspedralbes.cat</p>
-            <p>a19axechacan@inspedralbes.cat</p>
-        </div>
-    </div>
-</footer>
+    <?php
+    include("footer.php");
+    ?>
 
 </html>

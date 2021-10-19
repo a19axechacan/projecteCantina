@@ -18,7 +18,7 @@
         <div class="admin-container">
             <h1 id="obj">LA MAJOR VARIETAT DE PRODUCTES</h1>
             <div id="A">
-                <a href="admin.html"><img src="css\admin.jpg" width="80px" height="80px"></a>
+                <a href="admin.php"><img src="css\admin.jpg" width="80px" height="80px"></a>
                 <p id="admin">Administració</p>
             </div>
         </div>

@@ -1,0 +1,18 @@
+.menu-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    border-style: groove;
+}
+
+#menu {
+    border-style: solid;
+}
+
+#compra {
+    padding-left: 10px;
+    border-style: solid;
+}
+
+#com {
+    text-align: center;
+}
