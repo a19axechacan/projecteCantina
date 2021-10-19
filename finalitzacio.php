@@ -7,20 +7,9 @@
     <link href="capçalera.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 
-    <header>
-        <div class="header-container">
-            <div><img id="logo" src="css\logo.png" width="100px" height="100px"></div> 
-            <div id="C">
-                <p>CANTINA</p>  
-                <p>INSTITUT</p>
-                <p>PEDRALBES</p>
-            </div>
-            <div id="M">
-                <a href="menu.php"><img id="I" src="css\bolsa.jpg" width="82px" height="82px"></a>
-                <p id="T">Menú</p>
-            </div>
-        </div>
-    </header>
+    <?php
+    include("header.php");
+    ?>
 
 </head>
 <body>
@@ -113,16 +102,8 @@
 
 </body>
 
-    <footer>
-        <div class="footer-container">
-            <div id="email">
-                <p>Contáctanos:</p>
-            </div>
-            <div id="email">
-                <p>a20servilrac@inspedralbes.cat</p>
-                <p>a17chetrupos@inspedralbes.cat</p>
-                <p>a19axechacan@inspedralbes.cat</p>
-            </div>
-        </div>
-    </footer>
+    <?php
+    include("footer.php");
+    ?>
+
 </html>
