@@ -18,52 +18,16 @@
 <div class="cuerpo">
     <h1>menu</h1>
 
+
+
+
+
+
+
+
+
     <?php
 
-    $menu = [
-        0 => [
-            "id" => 0,
-            "nom" => "Entrepà de fuet",
-            "descripció" => "Entrepà de fuet amb tomàquet",
-            "imatge" => "adsadas",
-            "preu" => 1.50
-        ],
-        1 => [
-            "id" => 1,
-            "nom" => "Entrepà de formatge",
-            "descripció" => "Entrepà de formatge amb tomàquet",
-            "imatge" => "adsadas",
-            "preu" => 1.50
-        ],
-        2 => [
-            "id" => 2,
-            "nom" => "Donut",
-            "descripció" => "Donut amb sucre",
-            "imatge" => "adsadas",
-            "preu" => 0.60
-        ],
-        3 => [
-            "id" => 3,
-            "nom" => "Cafè",
-            "descripció" => "Cafè sol",
-            "imatge" => "adsadas",
-            "preu" => 1.20
-        ],
-        4 => [
-            "id" => 4,
-            "nom" => "Suc de taronja",
-            "descripció" => "Suc de taronja petit",
-            "imatge" => "adsadas",
-            "preu" => 2
-        ],
-        5 => [
-            "id" => 5,
-            "nom" => "Suc de pinya",
-            "descripció" => "Suc de pinya petit",
-            "imatge" => "adsadas",
-            "preu" => 1.85
-        ]
-    ];
 
 
     $menuFile = fopen("menu.json", "r");
@@ -85,8 +49,13 @@
 
     $form .= "<div id='menuTarde'>";
     $form.= writeMenu($menuTarde);
+    
+
     $form.= "</div>";
     $form .= "<input type='hidden' id ='horariDia' name='horariDia'>";
+
+    
+
 
     function writeMenu($menu){
         $form="";
@@ -106,24 +75,41 @@
     ?>
 
 
+
+
+
+
     <div class="menu-container">
         <div id="menu">
             <p>
-                <?php
-                    echo "<form id='formMenu' action='validacio.php' method='post'> " . $form . " <button type='submit' id='comprar'>Comprar </button>  </form>";
-                ?>
+    
+                <form id='formMenu' action='validacio.php' method='post'>
+                   <?php echo $form?>
+                   <input type="hidden"  id="json" value = "
+                            <?php
+                            echo htmlspecialchars($menuRead)
+                   ?>
+                                ">
+                <button type='submit' id='comprar'>Comprar </button>  </form>
+
             </p>
         </div>
         <div id="compra">
-            <h3 id=com>Tu Compra:</h3>
+            <h3 id=tuCompra>Tu Compra:</h3>
             <hr>
-            <h4>Total gastat en entrpans de pernil:</h4>
-            <h4>Total gastat en entrpans de bacon:</h4>
-            <h4>Total gastat en Kit-Kat:</h4>
-            <h4>Total gastat en cafes amb llet:</h4>
-            <h4>Total gastat batuts de xoxolata:</h4>
-            <h4>Total gastat batuts de maduixa:</h4>
-            <h4 id="com">Total gastat:</h4>
+            <h4 id="c0"></h4>
+            <h4 id="c1"></h4>
+            <h4 id="c2"></h4>
+            <h4 id="c3"></h4>
+            <h4 id="c4"></h4>
+            <h4 id="c5"></h4>
+            <h4 id="c6"></h4>
+            <h4 id="c7"></h4>
+            <h4 id="c8"></h4>
+            <h4 id="c9"></h4>
+            <h4 id="c10"></h4>
+            <h4 id="c11"></h4>
+            <h4 id="com">Total gastat: 0€</h4>
         </div>
     </div>    
 

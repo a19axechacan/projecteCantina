@@ -10,7 +10,12 @@
 
 #compra {
     padding-left: 10px;
+    padding-right: 10px;
     border-style: solid;
+}
+
+#tuCompra {
+    text-align: center;
 }
 
 #com {
