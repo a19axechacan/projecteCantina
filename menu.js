@@ -124,6 +124,7 @@ window.onload = function () {
     function restarProducte(id) {
         let input = document.querySelector("input[ id='" + id + "']");
 
+
         if (input.value > 0) {
             input.value = input.value - 1;
 
@@ -138,34 +139,37 @@ window.onload = function () {
                     }
                 }
             }
+            if (input.value == 0) {
+                console.log(input.value)
+                document.getElementById("c" + id).style.display = "none";
+            }
+        }
 
         }
 
-    }
+        function sumaCarrito() {
+            let inputs = document.querySelectorAll("input[type=text]");
 
-    function sumaCarrito() {
-        let inputs = document.querySelectorAll("input[type=text]");
+            let compra = [];
 
-        let compra = [];
-
-        for (let index = 0; index < inputs.length; index++) {
+            for (let index = 0; index < inputs.length; index++) {
 
 
-            for (element of json.dia) {
-                if (element.id == index) {
-                    let item = {
-                        "nom": element.nom,
-                        "id": element.id,
-                        "preu": element.preu,
-                        "quantitat": inputs[index].value
+                for (element of json.dia) {
+                    if (element.id == index) {
+                        let item = {
+                            "nom": element.nom,
+                            "id": element.id,
+                            "preu": element.preu,
+                            "quantitat": inputs[index].value
+                        }
+
+                        if (item.quantitat > 0) {
+                            compra.push(item);
+                        }
                     }
 
-                    if (item.quantitat > 0) {
-                        compra.push(item);
-                    }
                 }
-
-            }
 
                 for (element of json.tarde) {
                     if (element.id == index) {
@@ -173,7 +177,7 @@ window.onload = function () {
                             "nom": element.nom,
                             "id": element.id,
                             "preu": parseFloat(element.preu),
-                            "quantitat": parseInt(inputs[index].value) 
+                            "quantitat": parseInt(inputs[index].value)
                         }
 
                         if (item.quantitat > 0) {
@@ -184,18 +188,20 @@ window.onload = function () {
 
 
             };
-            let suma= 0;
+            let suma = 0;
 
-            for(producte of compra){
+            for (producte of compra) {
 
-               
-                let sumaproducte= producte.preu * producte.quantitat;
-                suma+= sumaproducte; 
-                console.log(producte.preu)
+
+                let sumaproducte = producte.preu * producte.quantitat;
+                suma += sumaproducte;
+
             }
 
 
-            document.getElementById("com").innerHTML= "Total Gastat: "+ suma.toFixed(2) +"€";
+            document.getElementById("com").innerHTML = "Total Gastat: " + suma.toFixed(2) + "€";
+
+
 
         }
 
