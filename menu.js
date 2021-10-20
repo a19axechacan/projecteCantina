@@ -191,10 +191,7 @@ window.onload = function () {
                
                 let sumaproducte= producte.preu * producte.quantitat;
                 suma+= sumaproducte; 
-                console.log(sumarProducte)
                 console.log(producte.preu)
-                console.log(producte.quantitat)
-                console.log(suma)
             }
 
 
