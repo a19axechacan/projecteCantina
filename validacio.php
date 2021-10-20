@@ -72,7 +72,6 @@
 
     $array = array();
     $array = leer();
-    echo "mi array ". $array;
 
     imprimicion($array);
 
@@ -106,7 +105,10 @@
                 foreach ($menuDia as $elemento) {
                     if($elemento["id"] == $key){
 
-                        $arrayfinal[$key] = $elemento["preu"]* $auxval;
+                        $arrayfinal[$key] = [
+                            "preu" =>   $elemento["preu"]* $auxval,
+                            "quantitat" =>    $value
+                        ];
                     }
 
                     }
@@ -114,7 +116,10 @@
                 foreach ($menuTarde as $elemento) {
                     if($elemento["id"] == $key){
 
-                        $arrayfinal[$key] = $elemento["preu"]* $auxval;
+                        $arrayfinal[$key] = [
+                            "preu" =>   $elemento["preu"]* $auxval,
+                             "quantitat" =>    $value
+                        ];
                     }
 
                 }
@@ -125,7 +130,7 @@
 
 
 
-        $arraydefinitivo = array();
+/*        $arraydefinitivo = array();
 
         foreach ($arrayfinal as $key => $value) {
 
@@ -157,12 +162,12 @@
 
             }
 
-        }
+        }*/
 
 
-        print_r($arraydefinitivo);
 
         $gasto = 0;
+        /*
     foreach ($arraydefinitivo as $key => $value) {
 
         $gasto += $value;
@@ -182,7 +187,7 @@
 
 
 
-        }
+        }*/
 
 
         /*
