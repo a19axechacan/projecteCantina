@@ -85,6 +85,12 @@
             <h4 id="c3"></h4>
             <h4 id="c4"></h4>
             <h4 id="c5"></h4>
+            <h4 id="c6"></h4>
+            <h4 id="c7"></h4>
+            <h4 id="c8"></h4>
+            <h4 id="c9"></h4>
+            <h4 id="c10"></h4>
+            <h4 id="c11"></h4>
             <h4 id="com">Total gastat:</h4>
         </div>
     </div>    
