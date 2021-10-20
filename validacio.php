@@ -8,6 +8,8 @@
     <link href="capçalera.css" rel="stylesheet" type="text/css">
     <title>Validacio</title>
     <script src="js/validate.js"></script>
+    <link href="validacio.css" rel="stylesheet" type="text/css">
+
 
     <header>
         <div class="header-container">
@@ -29,39 +31,6 @@
 
     <div class="cuerpo">
       <h1>Validacio de la compra</h1>
-    
-    
-
-
-    <form method="POST" action="validar.php" name = "dades" onsubmit = "return validate()" onsubmit = "">
-        <table>
-          <tr>
-            <td align="LEFT">Nom:</td>
-            <td align="RIGHT" colspan="3"><input type="TEXT" name="nombre" size="25" required></td>
-          </tr>
-          <tr>
-            <td align="LEFT">Telefon:</td>
-            <td align="RIGHT" colspan="3"><input type="TEXT" name="telefono" size="25"></td>
-          </tr>
-
-          <tr>
-            <td align="LEFT">email:</td>
-            <td align="RIGHT" colspan="3"><input type="TEXT" name="email" size="25"></td>
-          </tr>
-
-            <tr>
-                <td align="RIGHT" colspan="3"><input type="hidden" name="json" size="25" value="" ></td>
-            </tr>
-          </Table>
-
-        <input TYPE="SUBMIT" value="Envia" >
-     </form>
-
-    
-
-
-
-
 
     <a href="menu.php">canviar compra</a><br>
     <a href="finalitzacio.php">comprar</a>
@@ -72,8 +41,12 @@
 
     $array = array();
     $array = leer();
-
     imprimicion($array);
+
+
+
+
+
 
 
     function leer (){
@@ -93,12 +66,11 @@
         $i = 0;
         $cosascompradas = array();
         foreach ($_POST as $key => $value) {
-            echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+
             if(htmlspecialchars($value) != 0){
 
                 $cosascompradas[$key] = $value;
 
-                echo "cosas compradas key ".$key;
                 $aux = $cosascompradas[$key] ;
                 $auxval = $value;
 
@@ -107,7 +79,12 @@
 
                         $arrayfinal[$key] = [
                             "preu" =>   $elemento["preu"]* $auxval,
-                            "quantitat" =>    $value
+                            "preuoriginal" => $elemento["preu"],
+                            "quantitat" =>    $value,
+                            "nom" => $elemento["nom"],
+                              "id" => $elemento["id"]
+
+
                         ];
                     }
 
@@ -118,7 +95,11 @@
 
                         $arrayfinal[$key] = [
                             "preu" =>   $elemento["preu"]* $auxval,
-                             "quantitat" =>    $value
+                            "preuoriginal" => $elemento["preu"],
+                            "quantitat" =>    $value,
+                            "nom" => $elemento["nom"],
+                            "id" => $elemento["id"]
+
                         ];
                     }
 
@@ -126,43 +107,11 @@
 
                 }
             }
-        print_r($arrayfinal);
+        //print_r($arrayfinal);
 
 
 
-/*        $arraydefinitivo = array();
 
-        foreach ($arrayfinal as $key => $value) {
-
-
-            for($i= 0; $i< count($menuDia); $i++){
-
-                if($key == $menuDia[$i]["id"]){
-                    echo " hola ";
-
-                    $arraydefinitivo[$menuDia[$i]["nom"]] = $value;
-
-
-            }
-
-                for($i= 0; $i< count($menuTarde); $i++){
-
-                    if ($key == $menuTarde[$i]["id"]){
-                        $arraydefinitivo[$menuTarde[$i]["nom"]] = $value;
-
-
-
-                    }
-
-
-
-            }
-
-
-
-            }
-
-        }*/
 
 
 
@@ -216,40 +165,68 @@
 
     function imprimicion(&$array){
 
-        $arraydefinitivo = array();
-        $menuFile = fopen("menu.json", "r");
 
-        $menuRead = fread($menuFile, filesize("menu.json"));
+        $llista = "";
 
-        fclose($menuFile);
+        $llistaul = "";
+        $llistahidden = "";
 
+        $preciototal = 0;
 
-        $json = json_decode($menuRead, true);
-
-        $menuDia = $json["dia"];
-        $menuTarde = $json["tarde"];
-
-
-        $i = 0;
-        foreach ($array as $key => $value) {
-            if($key == $menuDia[$i]["id"]){
-
-                $arraydefinitivo[$menuDia[$i]["nom"]] = $value;
-
-
-                }
-            elseif ($key == $menuTarde[$i]["id"]){
-                                $arraydefinitivo[$menuTarde[$i]["nom"]] = $value;
+        $form = "";
+    $totalapagar = "";
 
 
 
-            }
 
 
-                }
+        foreach ($array as $elemento) {
 
 
-        print_r($arraydefinitivo);
+            $llistaul .= " <li id =".$elemento['id'].">". $elemento["nom"]. "  quantitat: ". $elemento["quantitat"]. " preu: ". $elemento["preuoriginal"]. " € " .  "</li>";
+
+            $llistahidden .= "<input type='hidden' name = ".$elemento['id']. " value = '".$elemento['id']. $elemento["nom"]. "  quantitat: ". $elemento["quantitat"]. " preu: ". $elemento["preuoriginal"]."'/>";
+
+            $preciototal += $elemento["preu"];
+
+        }
+
+
+        $llista = "<div id='llista'>". $llistaul. $llistahidden. "</div>";
+
+        $form =    "<form method='POST' action='finalitzacio.php' name = 'dades'>".
+                    "<table>
+          <tr>
+            <td >Nom:</td>
+            <td  colspan='3'><input type='TEXT' name='nombre' size='25' required></td>
+          </tr>
+          <tr>
+            <td >Telefon:</td>
+            <td  colspan='3'><input type='TEXT' name='telefono' size='25'></td>
+          </tr>
+
+          <tr>
+            <td >email:</td>
+            <td  colspan='3'><input type='TEXT' name='email' size='25'></td>
+          </tr>
+         <input type='hidden' name='total' size='25' value= $preciototal>
+
+        
+         
+          </Table>". $llista.    "<p id ='total' > Total: ". $preciototal . "€</p>".
+
+
+            "<input TYPE='SUBMIT' value='Envia' >" .
+
+
+            "</form>";
+
+
+
+
+        echo $form;
+
+
 
     }
 
