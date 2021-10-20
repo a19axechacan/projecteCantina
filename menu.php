@@ -86,6 +86,7 @@
     $form .= "<div id='menuTarde'>";
     $form.= writeMenu($menuTarde);
     $form.= "</div>";
+    $form.= "<input type='hidden' id='json' name='json'>";
     $form .= "<input type='hidden' id ='horariDia' name='horariDia'>";
 
     function writeMenu($menu){
@@ -117,12 +118,12 @@
         <div id="compra">
             <h3 id=com>Tu Compra:</h3>
             <hr>
-            <h4>Total gastat en entrpans de pernil:</h4>
-            <h4>Total gastat en entrpans de bacon:</h4>
-            <h4>Total gastat en Kit-Kat:</h4>
-            <h4>Total gastat en cafes amb llet:</h4>
-            <h4>Total gastat batuts de xoxolata:</h4>
-            <h4>Total gastat batuts de maduixa:</h4>
+            <h4 id="c0">Total gastat en entrpans de pernil:</h4>
+            <h4 id="c1">Total gastat en entrpans de bacon:</h4>
+            <h4 id="c2">Total gastat en Kit-Kat:</h4>
+            <h4 id="c3">Total gastat en cafes amb llet:</h4>
+            <h4 id="c4">Total gastat batuts de xoxolata:</h4>
+            <h4 id="c5">Total gastat batuts de maduixa:</h4>
             <h4 id="com">Total gastat:</h4>
         </div>
     </div>    

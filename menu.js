@@ -93,6 +93,7 @@ window.onload = function () {
     function sumarProducte(id) {
         let input = document.querySelector("input[ id='" + id + "']");
         input.value++;
+        document.getElementById("c"+id).innerHTML=input.value
     }
 
     function restarProducte(id) {
@@ -100,6 +101,7 @@ window.onload = function () {
 
         if (input.value > 0) {
             input.value = input.value - 1;
+            document.getElementById("c"+id).innerHTML=input.value
         }
 
     }
