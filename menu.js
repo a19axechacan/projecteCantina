@@ -2,7 +2,7 @@ window.onload = function () {
 
 
 
-    console.log(document.getElementById("json").value);
+    
 
     const json = JSON.parse(document.getElementById("json").value);
     
@@ -102,7 +102,21 @@ window.onload = function () {
     function sumarProducte(id) {
         let input = document.querySelector("input[ id='" + id + "']");
         input.value++;
-        document.getElementById("c"+id).innerHTML=input.value
+
+        for(element of json.dia) {
+            if(element.id==id){
+                document.getElementById("c"+id).innerHTML=element.nom +" "+ input.value
+            }
+
+        for(element of json.tarde) {
+            if(element.id==id){
+                document.getElementById("c"+id).innerHTML=element.nom +" "+ input.value
+            }
+        }
+}
+
+
+       
     }
 
     function restarProducte(id) {
@@ -110,11 +124,21 @@ window.onload = function () {
 
         if (input.value > 0) {
             input.value = input.value - 1;
-            document.getElementById("c"+id).innerHTML=input.value
+
+            for(element of json.dia) {
+                if(element.id==id){
+                    document.getElementById("c"+id).innerHTML=element.nom +" "+ input.value
+                }
+    
+            for(element of json.tarde) {
+                if(element.id==id){
+                    document.getElementById("c"+id).innerHTML=element.nom +" "+ input.value
+                }
+            }
         }
 
     }
 
-
+    }
 
 }
