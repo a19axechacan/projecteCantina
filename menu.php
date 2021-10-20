@@ -20,50 +20,6 @@
 
     <?php
 
-    $menu = [
-        0 => [
-            "id" => 0,
-            "nom" => "Entrepà de fuet",
-            "descripció" => "Entrepà de fuet amb tomàquet",
-            "imatge" => "adsadas",
-            "preu" => 1.50
-        ],
-        1 => [
-            "id" => 1,
-            "nom" => "Entrepà de formatge",
-            "descripció" => "Entrepà de formatge amb tomàquet",
-            "imatge" => "adsadas",
-            "preu" => 1.50
-        ],
-        2 => [
-            "id" => 2,
-            "nom" => "Donut",
-            "descripció" => "Donut amb sucre",
-            "imatge" => "adsadas",
-            "preu" => 0.60
-        ],
-        3 => [
-            "id" => 3,
-            "nom" => "Cafè",
-            "descripció" => "Cafè sol",
-            "imatge" => "adsadas",
-            "preu" => 1.20
-        ],
-        4 => [
-            "id" => 4,
-            "nom" => "Suc de taronja",
-            "descripció" => "Suc de taronja petit",
-            "imatge" => "adsadas",
-            "preu" => 2
-        ],
-        5 => [
-            "id" => 5,
-            "nom" => "Suc de pinya",
-            "descripció" => "Suc de pinya petit",
-            "imatge" => "adsadas",
-            "preu" => 1.85
-        ]
-    ];
 
 
     $menuFile = fopen("menu.json", "r");
@@ -85,9 +41,14 @@
 
     $form .= "<div id='menuTarde'>";
     $form.= writeMenu($menuTarde);
+    
+echo $menuRead;
     $form.= "</div>";
-    $form.= "<input type='hidden' id='json' name='json'>";
+    $form.= "<input type='hidden ' id='json' name='json' value= '".   $menuRead . "'>";
     $form .= "<input type='hidden' id ='horariDia' name='horariDia'>";
+
+    
+
 
     function writeMenu($menu){
         $form="";

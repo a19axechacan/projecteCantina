@@ -1,6 +1,15 @@
 window.onload = function () {
 
 
+
+    console.log(document.getElementById("json").value);
+
+    const json = JSON.parse(document.getElementById("json").value);
+    
+    
+
+
+
     let hora = new Date().getHours();
     let minutes = new Date().getMinutes();
 
