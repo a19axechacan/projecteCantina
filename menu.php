@@ -77,7 +77,7 @@
             </p>
         </div>
         <div id="compra">
-            <h3 id=com>Tu Compra:</h3>
+            <h3 id=tuCompra>Tu Compra:</h3>
             <hr>
             <h4 id="c0"></h4>
             <h4 id="c1"></h4>
@@ -91,7 +91,7 @@
             <h4 id="c9"></h4>
             <h4 id="c10"></h4>
             <h4 id="c11"></h4>
-            <h4 id="com">Total gastat:</h4>
+            <h4 id="com">Total gastat: 0€</h4>
         </div>
     </div>    
 
