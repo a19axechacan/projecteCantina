@@ -29,6 +29,19 @@
     <?php
 
 
+    if(empty($_COOKIE["compraRealitzada"])){
+
+    }else{
+       header("Location: error.php");
+    }
+
+
+
+
+
+
+
+
 
     $menuFile = fopen("menu.json", "r");
 
