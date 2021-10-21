@@ -21,14 +21,16 @@ window.onload = function () {
     else if (hora > 11) {
         document.getElementById("horariDia").value = false;
         document.getElementById("menuDia").style.display = "none";
-    }
-    else if (minutes < 30) {
-        document.getElementById("horariDia").value = true;
-        document.getElementById("menuTarde").style.display = "none";
-    }
+    } 
     else {
-        document.getElementById("horariDia").value = false;
-        document.getElementById("menuDia").style.display = "none";
+        if (minutes < 30) {
+            document.getElementById("horariDia").value = true;
+            document.getElementById("menuTarde").style.display = "none";
+        }
+        else {
+            document.getElementById("horariDia").value = false;
+            document.getElementById("menuDia").style.display = "none";
+        }  
     }
 
 
@@ -104,15 +106,16 @@ window.onload = function () {
     function sumarProducte(id) {
         let input = document.querySelector("input[ id='" + id + "']");
         input.value++;
+        document.getElementById("c" + id).style.display = "block";
 
         for (element of json.dia) {
             if (element.id == id) {
-                document.getElementById("c" + id).innerHTML = element.nom + " " + input.value
+                document.getElementById("c" + id).innerHTML = input.value + "x " + element.nom + " -" + element.preu + "€ -"
             }
 
             for (element of json.tarde) {
                 if (element.id == id) {
-                    document.getElementById("c" + id).innerHTML = element.nom + " " + input.value
+                    document.getElementById("c" + id).innerHTML = input.value + "x " + element.nom + " -" + element.preu + "€ -"
                 }
             }
         }
@@ -130,12 +133,12 @@ window.onload = function () {
 
             for (element of json.dia) {
                 if (element.id == id) {
-                    document.getElementById("c" + id).innerHTML = element.nom + " " + input.value
+                    document.getElementById("c" + id).innerHTML = input.value + "x " + element.nom + " -" + element.preu + "€ -"
                 }
 
                 for (element of json.tarde) {
                     if (element.id == id) {
-                        document.getElementById("c" + id).innerHTML = element.nom + " " + input.value
+                        document.getElementById("c" + id).innerHTML = input.value + "x " + element.nom + " -" + element.preu + "€ -"
                     }
                 }
             }
