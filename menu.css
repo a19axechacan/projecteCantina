@@ -1,11 +1,26 @@
-.menu-container {
+.menu-list {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 4fr 1fr;
     border-style: groove;
 }
 
+.menu-container{
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+}
+.card  {
+    text-align: center;
+}
+.menu-item-label{
+    text-align: center;
+}
+
 #menu {
+
     border-style: solid;
+
 }
 
 #compra {

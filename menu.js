@@ -1,14 +1,8 @@
 window.onload = function () {
 
 
-
-
-
-
-
-
-
     const json = JSON.parse(document.getElementById("json").value);
+
 
 
     document.getElementById("comprar").addEventListener("click", pasajson());
@@ -40,25 +34,16 @@ window.onload = function () {
 
 
 
-    /*if(hora<11&&minutes<30){
-        document.getElementById("horariDia").value = true;
-        document.getElementById("menuTarde").style.display="none";
-    }else {
-        document.getElementById("horariDia").value = false;
-        document.getElementById("menuDia").style.display="none";
-    }*/
-
-
-
 
 
     document.getElementById("formMenu").addEventListener("click", function (e) {
 
+        let id= e.target.parentNode.parentNode.id;
         if (e.target.classList.contains("suma")) {
-            sumarProducte(e.target.parentNode.id);
+            sumarProducte(id);
             sumaCarrito();
         } else if (e.target.classList.contains("resta")) {
-            restarProducte(e.target.parentNode.id);
+            restarProducte(id);
             sumaCarrito();
 
         }
@@ -115,42 +100,6 @@ window.onload = function () {
 
 
 
-
-
-
-
-    /*
-        let buttonComprar = document.getElementById("comprar");
-    
-        buttonComprar.addEventListener('click', function () {
-            let inputs = document.getElementsByTagName("input");
-    
-            let compra = [];
-    
-            for (let index = 0; index < inputs.length; index++) {
-    
-    
-                let item = {
-                    "nom": inputs[index].name,
-                    "id": inputs[index].id,
-                    "quantitat": inputs[index].value
-                }
-    
-                if (item.quantitat > 0) {
-                    compra.push(item);
-                }
-            }
-    
-            let json = JSON.stringify(compra);
-    
-            document.getElementById("json").value = json;
-            document.getElementById("formMenu").submit();
-    
-        });*/
-
-
-
-
     function sumarProducte(id) {
         let input = document.querySelector("input[ id='" + id + "']");
         input.value++;
@@ -191,7 +140,7 @@ window.onload = function () {
                 }
             }
             if (input.value == 0) {
-                console.log(input.value)
+               
                 document.getElementById("c" + id).style.display = "none";
             }
         }
