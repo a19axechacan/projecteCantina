@@ -30,27 +30,9 @@
         ]
     );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     $comanda =  dibuixacomanda();
 
     exportacomanda($comanda);
-
-
-
-
-
 
 
     function dibuixacomanda()
@@ -65,16 +47,15 @@
         $textoli = "";
         $total = $_POST["total"];
 
+        $jsonCompra = json_decode($_POST["jsonCompra"],true);
 
-        $i = 0;
-        foreach ($_POST as $key => $value) {
 
-            if ($i >= 4) {
-                $textoli .= "<li>" . $value . "</li>";
 
-            }
-            $i++;
+        foreach ($jsonCompra as $item){
+            $textoli .= "<li>" . $item["nom"].": ".$item["quantitat"]  ." unitat/s</li>";
         }
+
+
         $cosaspedidas = "<ul>" . $textoli . "</ul>";
 
         $divtext .= "<div id='dades'>    
@@ -86,7 +67,7 @@
 
                             " . $cosaspedidas . "
                         </ul>
-                          <p id = 'total'> Total a pagar  $total</p>                         
+                          <p id = 'total'> Total a pagar  $total €</p>                         
 
                         </div>";
 

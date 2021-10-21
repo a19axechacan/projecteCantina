@@ -21,8 +21,6 @@
 <div class="cuerpo">
     <h1>Validacio de la compra</h1>
 
-    <a href="menu.php">canviar compra</a><br>
-    <a href="finalitzacio.php">comprar</a>
 
 
     <?php
@@ -125,7 +123,6 @@
             $llistaul .= " <li id =" . $elemento['id'] . ">" . $elemento["nom"] . "  quantitat: " . $elemento["quantitat"] . " preu: " . $elemento["preuoriginal"] . " € " . "</li>";
 
 
-            //    $llistahidden .= "<input type='hidden' name = 'jsonpasar' value = $llistajson/>";
 
             $preciototal += $elemento["preu"];
 
@@ -134,43 +131,14 @@
 
         $llista = "<div id='llista'>" . $llistaul . $llistahidden . "</div>";
 
-        $form = "<form method='POST' action='finalitzacio.php' name = 'dades' onsubmit='validate()'>" .
-            "<table>
-          <tr>
-            <td >Nom:</td>
-            <td  colspan='3'><input type='TEXT' name='nombre' size='25' required></td>
-          </tr>
-          <tr>
-            <td >Telefon:</td>
-            <td  colspan='3'><input type='TEXT' name='telefono' size='25'></td>
-          </tr>
-          <tr>
-            <td >email:</td>
-            <td  colspan='3'><input type='TEXT' name='email' size='25'></td>
-          </tr>
-         <input type='hidden' name='total' size='25' value= $preciototal> 
-         <input type='hidden' name='jsonCompra'  value= " . $llistaJson . ">
-         
-
-        
-         
-          </Table>" . $llista . "<p id ='total' > Total: " . $preciototal . "€</p>" .
-
-
-            "<input TYPE='SUBMIT' value='Envia' >" .
-
-
-            "</form>";
-
-        //  echo $form;
     }
 
 
     ?>
 
 
-    <form method='POST' action='finalitzacio.php' name='dades' onsubmit='validate()'>".
-        "
+    <form method='POST' action='finalitzacio.php' name='dades' onsubmit='validate()'>
+
         <table>
             <tr>
                 <td>Nom:</td>
@@ -185,7 +153,7 @@
                 <td colspan='3'><input type='TEXT' name='email' size='25'></td>
             </tr>
             <input type='hidden' name='total' size='25' value= <?php echo $preciototal ?>>
-            <input type='hidden' name='jsonCompra' value=<?php echo htmlspecialchars($llistaJson) ?>">
+            <input type='hidden' name='jsonCompra' value="<?php echo htmlspecialchars($llistaJson) ?>">
 
 
 
