@@ -95,7 +95,7 @@
             </p>
         </div>
         <div id="compra">
-            <h3 id=tuCompra>Tu Compra:</h3>
+            <h3 id=tuCompra>El teu carrito:</h3>
             <hr>
             <h4 id="c0"></h4>
             <h4 id="c1"></h4>
