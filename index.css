@@ -6,7 +6,7 @@
 
 .CTA-container {
     display: grid;
-    grid-template-columns: 730px 730px auto;
+    grid-template-columns: 730px 730px 210px;
     border-top-style: groove;
     border-bottom-style: groove;
 }
@@ -25,21 +25,47 @@ h1 {
     text-align: center;
     border-right-style: groove;
     overflow: hidden;
-    box-sizing: border-box;
 }
 
 #CTA2 {
     margin: 10px;
     padding: 10px;
     overflow: hidden;
-    box-sizing: border-box;
+}
+
+#zoomimg {
+    transition: .2s ease;
+    -moz-transition: .2s ease;
+    -webkit-transition: all .2s ease-in-out;
+}
+
+#zoomimg:hover {
+    transform: scale(1.8);
+    -moz-transform: scale(1.8);
+    -webkit-transform: scale(1.8);
+}
+
+#zoom {
+    transition: .2s ease;
+    -moz-transition: .2s ease;
+    -webkit-transition: all .2s ease-in-out;
+}
+
+#zoom:hover {
+    transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
 }
 
 #CC {
     margin: 10px;
     padding: 10px;
-    text-align: end;
+    text-align: center;
     align-self: end;
+}
+
+#CC:hover {
+    border-bottom-style: groove;
 }
 
 #A {
