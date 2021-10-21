@@ -25,10 +25,10 @@
         
         <div class="CTA-container">
             <div id="CTA1">
-                <a href="menu.php"><img src="css\bocadillo1.jpg" width="650px" height="420px"></a>
+                <a href="menu.php"><img class="zoom" src="css\bocadillo1.jpg" width="650px" height="420px"></a>
             </div>   
             <div id="CTA2">
-                <a href="menu.php"><img src="css\bocadillo2.jpg" width="650px" height="420px"></a>
+                <a href="menu.php"><img class="zoom" src="css\bocadillo2.jpg" width="650px" height="420px"></a>
             </div>
             <div id="CC">
                 <a href="menu.php"><img src="css\carrito.png" width="150px" height="150px"></a>

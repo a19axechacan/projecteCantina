@@ -24,11 +24,15 @@ h1 {
     margin: 10px;
     text-align: center;
     border-right-style: groove;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 #CTA2 {
     margin: 10px;
     padding: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 #CC {
