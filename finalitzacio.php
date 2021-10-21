@@ -22,6 +22,27 @@
 
 
     <?php
+
+    setcookie("compraRealitzada", true,
+        ['expires'=>strtotime('today 23:59'),
+            'path'=>'/',
+            'samesite'=> 'Strict'
+        ]
+    );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     $comanda =  dibuixacomanda();
 
     exportacomanda($comanda);
