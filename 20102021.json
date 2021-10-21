@@ -1,0 +1,12 @@
+<div id='dades'>    
+                            <ul class='dadescli'>
+                            <li>Nom del client: a</li>
+                            <li>Email del client: a@a.a</li>
+                            <li>Telefon del client: 12345689</li>
+                             <li>Coses demanades:</li>
+
+                            <ul><li>8Kit-Kat  quantitat: 1 preu: 1.45</li><li>9Café amb llet  quantitat: 1 preu: 1.6</li></ul>
+                        </ul>
+                          <p id = 'total'> Total a pagar  3.05</p>                         
+
+                        </div>

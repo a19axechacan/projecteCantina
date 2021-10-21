@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="capçalera.css" rel="stylesheet" type="text/css">
+    <link href="finalitzacio.css" rel="stylesheet" type="text/css">
+
     <title>Document</title>
 
     <?php
@@ -20,13 +22,9 @@
 
 
     <?php
-    $options = array (
-        'expires' => time() + 86400,
-        'path' => '/',
-        'secure' => true,
-        'samesite' => 'Lax'
-    );
-    setcookie('ultimaCompra', time(), $options);
+    $comanda =  dibuixacomanda();
+
+    exportacomanda($comanda);
 
 
 
@@ -34,62 +32,71 @@
 
 
 
-    $myFile = fopen("comandes", "a+");
+    function dibuixacomanda()
+    {
 
-    $json = '{
-    "glossary": {
-        "title": "example glossary",
-		"GlossDiv": {
-            "title": "S",
-			"GlossList": {
-                "GlossEntry": {
-                    "ID": "SGML",
-					"SortAs": "SGML",
-					"GlossTerm": "Standard Generalized Markup Language",
-					"Acronym": "SGML",
-					"Abbrev": "ISO 8879:1986",
-					"GlossDef": {
-                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
-						"GlossSeeAlso": ["GML", "XML"]
-                    },
-					"GlossSee": "markup"
-                }
+        $divtext = "";
+
+        $nom = $_POST["nombre"];
+        $email = $_POST["email"];
+        $telefono = $_POST["telefono"];
+        $cosaspedidas = "";
+        $textoli = "";
+        $total = $_POST["total"];
+
+
+        $i = 0;
+        foreach ($_POST as $key => $value) {
+
+            if ($i >= 4) {
+                $textoli .= "<li>" . $value . "</li>";
+
             }
+            $i++;
         }
+        $cosaspedidas = "<ul>" . $textoli . "</ul>";
+
+        $divtext .= "<div id='dades'>    
+                            <ul class='dadescli'>
+                            <li>Nom del client: $nom</li>
+                            <li>Email del client: $email</li>
+                            <li>Telefon del client: $telefono</li>
+                             <li>Coses demanades:</li>
+
+                            " . $cosaspedidas . "
+                        </ul>
+                          <p id = 'total'> Total a pagar  $total</p>                         
+
+                        </div>";
+
+        echo $divtext;
+        return $divtext;
+
+
     }
-}';
 
-    fwrite($myFile, $json);
-
-
-
+    function exportacomanda($text){
+        $filename =  date("dmY") . ".json";
+        $file = "";
 
 
-
-    fclose($myFile);
-
+        if(file_exists($filename) == true){
 
 
+        }
+
+        else {
+            touch($filename);
+            $file = fopen($filename, "w");
+            fwrite($file, $text);
 
 
-
-
-
-
-
+        }
 
 
 
 
-
-
-
-
-
-
-
-
-
+    }
 
 
     ?>

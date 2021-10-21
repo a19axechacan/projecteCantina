@@ -18,6 +18,14 @@
 <div class="cuerpo">
     <h1>menu</h1>
 
+
+
+
+
+
+
+
+
     <?php
 
 
@@ -44,7 +52,6 @@
     
 
     $form.= "</div>";
-    $form.= "<input type='hidden ' id='json' name='json' value= '".   $menuRead . "'>";
     $form .= "<input type='hidden' id ='horariDia' name='horariDia'>";
 
     
@@ -68,12 +75,23 @@
     ?>
 
 
+
+
+
+
     <div class="menu-container">
         <div id="menu">
             <p>
-                <?php
-                    echo "<form id='formMenu' action='validacio.php' method='post'> " . $form . " <button type='submit' id='comprar'>Comprar </button>  </form>";
-                ?>
+    
+                <form id='formMenu' action='validacio.php' method='post'>
+                   <?php echo $form?>
+                   <input type="hidden"  id="json" value = "
+                            <?php
+                            echo htmlspecialchars($menuRead)
+                   ?>
+                                ">
+                <button type='submit' id='comprar'>Comprar </button>  </form>
+
             </p>
         </div>
         <div id="compra">
