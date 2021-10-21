@@ -11,20 +11,9 @@
     <link href="validacio.css" rel="stylesheet" type="text/css">
 
 
-    <header>
-        <div class="header-container">
-            <div><img id="logo" src="css\logo.png" width="100px" height="100px"></div> 
-            <div id="C">
-                <p>CANTINA</p>  
-                <p>INSTITUT</p>
-                <p>PEDRALBES</p>
-            </div>
-            <div id="M">
-                <a href="menu.php"><img id="I" src="css\bolsa.jpg" width="82px" height="82px"></a>
-                <p id="T">Menú</p>
-            </div>
-        </div>
-    </header>
+    <?php
+    include ("header.php")
+    ?>
 
 </head>
 <body>
@@ -37,7 +26,8 @@
 
 
 
-    <?php 
+
+        <?php
 
     $array = array();
     $array = leer();
@@ -186,7 +176,8 @@
 
             $llistaul .= " <li id =".$elemento['id'].">". $elemento["nom"]. "  quantitat: ". $elemento["quantitat"]. " preu: ". $elemento["preuoriginal"]. " € " .  "</li>";
 
-            $llistahidden .= "<input type='hidden' name = ".$elemento['id']. " value = '".$elemento['id']. $elemento["nom"]. "  quantitat: ". $elemento["quantitat"]. " preu: ". $elemento["preuoriginal"]."'/>";
+            $llistajson = $_POST["jsoncompra"];
+            $llistahidden .= "<input type='hidden' name = 'jsonpasar' value = $llistajson/>";
 
             $preciototal += $elemento["preu"];
 
@@ -195,7 +186,7 @@
 
         $llista = "<div id='llista'>". $llistaul. $llistahidden. "</div>";
 
-        $form =    "<form method='POST' action='finalitzacio.php' name = 'dades'>".
+        $form =    "<form method='POST' action='finalitzacio.php' name = 'dades' onsubmit='validate()'>".
                     "<table>
           <tr>
             <td >Nom:</td>
@@ -210,7 +201,7 @@
             <td >email:</td>
             <td  colspan='3'><input type='TEXT' name='email' size='25'></td>
           </tr>
-         <input type='hidden' name='total' size='25' value= $preciototal>
+         <input type='hidden' name='total' size='25' value= $preciototal> 
 
         
          
@@ -222,13 +213,7 @@
 
             "</form>";
 
-
-
-
         echo $form;
-
-
-
     }
 
 
@@ -259,7 +244,25 @@ echo $nombre;
 
 echo $email;
 echo $telefono;
+
+if($nombre == null){
+
+    return false;
+
 }
+if($email){
+
+    return false;
+}
+
+if($telefono){
+
+
+
+}
+}
+
+
 
 
 
@@ -280,17 +283,9 @@ function potscomprar($token){
 </div>
 </body>
 
-      <footer>
-        <div class="footer-container">
-            <div id="email">
-                <p>Contáctanos:</p>
-            </div>
-            <div id="email">
-                <p>a20servilrac@inspedralbes.cat</p>
-                <p>a17chetrupos@inspedralbes.cat</p>
-                <p>a19axechacan@inspedralbes.cat</p>
-            </div>
-        </div>
-    </footer>
+<?php
+include ("footer.php")
+?>
+
 
 </html>

@@ -7,7 +7,7 @@
             <p>PEDRALBES</p>
         </div>
         <div id="M">
-            <a href="menu.php"><img id="I" src="css\bolsa.jpg" width="82px" height="82px"></a>
+            <a href="menu.php"><img id="bolsazoom" src="css\bolsa.jpg" width="82px" height="82px"></a>
             <p id="T">Menú</p>
         </div>
     </div>

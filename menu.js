@@ -4,9 +4,14 @@ window.onload = function () {
 
 
 
+
+
+
+
     const json = JSON.parse(document.getElementById("json").value);
 
-    
+
+    document.getElementById("comprar").addEventListener("click", pasajson());
 
 
 
@@ -61,6 +66,49 @@ window.onload = function () {
 
 
 
+    function pasajson() {
+        let inputs = document.querySelectorAll("input[type=text]");
+
+        let compra = [];
+
+        for (let index = 0; index < inputs.length; index++) {
+
+
+            for (element of json.dia) {
+                if (element.id == index) {
+                    let item = {
+                        "nom": element.nom,
+                        "id": element.id,
+                        "quantitat": inputs[index].value
+                    }
+
+                    if (item.quantitat > 0) {
+                        compra.push(item);
+                    }
+                }
+
+            }
+
+            for (element of json.tarde) {
+                if (element.id == index) {
+                    let item = {
+                        "nom": element.nom,
+                        "id": element.id,
+                        "quantitat": parseInt(inputs[index].value)
+                    }
+
+                    if (item.quantitat > 0) {
+                        compra.push(item);
+                    }
+                }
+            }
+
+
+        };
+
+        document.getElementById("jsoncompra").value = JSON.stringify(compra);
+
+    }
 
 
 

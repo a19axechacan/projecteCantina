@@ -66,8 +66,11 @@
 
     $form.= "</div>";
     $form .= "<input type='hidden' id ='horariDia' name='horariDia'>";
+    $form .= "<input type='hidden' id ='jsoncompra' name='jsoncompra'>";
 
-    
+
+
+
 
 
     function writeMenu($menu){
@@ -96,7 +99,7 @@
         <div id="menu">
             <p>
     
-                <form id='formMenu' action='validacio.php' method='post'>
+                <form id='formMenu' action='validacio.php' method='post' >
                    <?php echo $form?>
                    <input type="hidden"  id="json" value = "
                             <?php
