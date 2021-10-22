@@ -14,6 +14,7 @@ session_start();
     <title>Validacio</title>
     <script src="js/validate.js"></script>
     <link href="validacio.css" rel="stylesheet" type="text/css">
+    <script src="sweetalert2.all.min.js"></script>
 
 
     <?php
@@ -145,7 +146,7 @@ session_start();
     ?>
 
 
-    <form method='POST' action='finalitzacio.php' name='dades' onsubmit='validate()'>
+    <form method='POST' action='finalitzacio.php' name='dades' >
 
         <table>
             <tr>
@@ -164,7 +165,7 @@ session_start();
             </Table><?php echo $llista ?> <p id ='total' > Total:  <?php echo $preciototal ?> €</p>
 
 
-            <input TYPE='SUBMIT' value='Envia' id='enviaform' onclick="return validate()">
+            <input TYPE='SUBMIT' value='Envia' id='enviaform' onclick="return validate()" >
 
 
             </form>
