@@ -161,11 +161,10 @@ session_start();
                 <td colspan='3'><input type='TEXT' name='email' size='25'></td>
             </tr>
             <input type='hidden' name='total' size='25' value= <?php echo $preciototal ?>>
-            <input type='hidden' name='jsonCompra' value="<?php echo htmlspecialchars($llistaJson) ?>">
             </Table><?php echo $llista ?> <p id ='total' > Total:  <?php echo $preciototal ?> €</p>
 
 
-            <input TYPE='SUBMIT' value='Envia' >
+            <input TYPE='SUBMIT' value='Envia' id='enviaform' onclick="return validate()">
 
 
             </form>

@@ -1,0 +1,12 @@
+<div id='dades'>    
+                            <ul class='dadescli'>
+                            <li>Nom del client: a</li>
+                            <li>Email del client: 2</li>
+                            <li>Telefon del client: 1</li>
+                             <li>Coses demanades:</li>
+
+                            <ul></ul>
+                        </ul>
+                          <p id = 'total'> Total a pagar  0 €</p>                         
+
+                        </div>

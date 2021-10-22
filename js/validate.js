@@ -1,8 +1,15 @@
-      // Form validation code will come here.
+
+//document.getElementById("enviaform").addEventListener("click", return validate());
+
+// Form validation code will come here.
       function validate() {
       
         if( document.dades.nombre.value == "" ) {
-           alert( "Nombre mal!" );
+            Swal.fire(
+                'Good job!',
+                'You clicked the button!',
+                'success'
+            );
            document.dades.nombre.focus() ;
            return false;
         }

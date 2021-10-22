@@ -83,12 +83,15 @@ session_start();
     }
 
     function exportacomanda($text){
-        $filename =  date("dmY") . ".json";
+        $filename =  date("d-m-Y") . ".json";
         $file = "";
 
 
         if(file_exists($filename) == true){
+            $file = fopen($filename, "a");
+            fwrite($file, "\n");
 
+            fwrite($file, $text);
 
         }
 
