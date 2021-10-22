@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,8 +50,9 @@
         $cosaspedidas = "";
         $textoli = "";
         $total = $_POST["total"];
+        print_r($_SESSION["compra"]);
 
-        $jsonCompra = json_decode($_POST["jsonCompra"],true);
+        $jsonCompra = json_decode($_SESSION["compra"],true);
 
 
 

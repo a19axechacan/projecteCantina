@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,6 +44,9 @@
     $arrayCompra = leer();
 
     $llistaJson = json_encode($arrayCompra);
+
+
+    $_SESSION["compra"]=$llistaJson;
 
     imprimicion($arrayCompra, $preciototal, $llista, $llistaJson);
 
@@ -154,10 +162,6 @@
             </tr>
             <input type='hidden' name='total' size='25' value= <?php echo $preciototal ?>>
             <input type='hidden' name='jsonCompra' value="<?php echo htmlspecialchars($llistaJson) ?>">
-
-
-
-
             </Table><?php echo $llista ?> <p id ='total' > Total:  <?php echo $preciototal ?> €</p>
 
 
