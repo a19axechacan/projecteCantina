@@ -34,9 +34,9 @@ session_start();
         ]
     );
 
-    $comanda =  dibuixacomanda();
+     dibuixacomanda();
 
-    exportacomanda($comanda);
+    exportacomanda($_SESSION["compra"]);
 
 
     function dibuixacomanda()
@@ -77,32 +77,45 @@ session_start();
                         </div>";
 
         echo $divtext;
-        return $divtext;
+
 
 
     }
 
     function exportacomanda($text){
+
+        echo $text;
+
         $filename =  date("d-m-Y") . ".json";
         $file = "";
-
+        $compra="";
 
         if(file_exists($filename) == true){
-            $file = fopen($filename, "a");
-            fwrite($file, "\n");
-
-            fwrite($file, $text);
+            echo "el fichero existe";
+            $file = fopen($filename, "r");
+            $compra=  json_decode(fread($file, filesize($filename)),true);
+            fclose($file);
+            $jsonCompra = json_decode($_SESSION["compra"],true);
+            $compraActualitzada =array_push($compra["comandes"], $jsonCompra);
+            print_r($compra);
+            $file = fopen($filename, "w");
+            fwrite($file, json_encode($compra));
+            fclose($file);
 
         }
 
         else {
+            echo  "El fichero no existe";
             touch($filename);
             $file = fopen($filename, "w");
-            fwrite($file, $text);
+            fwrite($file, "{\"comandes\":[".$text."]}");
+            fclose($file);
 
 
         }
-
+        $file = fopen($filename, "r");
+        $compra=  fread($file, filesize($filename));
+        fclose($file);
 
 
 
