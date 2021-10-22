@@ -84,7 +84,11 @@ session_start();
 
     function exportacomanda($text){
 
-        echo $text;
+       $arrayText= json_decode($text, true);
+       print_r($arrayText);
+       $arrayText["id"]= "comanda1";
+        print_r($arrayText);
+       $text= json_encode($arrayText);
 
         $filename =  date("d-m-Y") . ".json";
         $file = "";
@@ -95,8 +99,7 @@ session_start();
             $file = fopen($filename, "r");
             $compra=  json_decode(fread($file, filesize($filename)),true);
             fclose($file);
-            $jsonCompra = json_decode($_SESSION["compra"],true);
-            $compraActualitzada =array_push($compra["comandes"], $jsonCompra);
+            $compraActualitzada =array_push($compra["comandes"], $arrayText);
             print_r($compra);
             $file = fopen($filename, "w");
             fwrite($file, json_encode($compra));
