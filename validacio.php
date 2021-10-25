@@ -14,7 +14,8 @@ session_start();
     <title>Validacio</title>
     <script src="js/validate.js"></script>
     <link href="validacio.css" rel="stylesheet" type="text/css">
-    <script src="sweetalert2.all.min.js"></script>
+    <script src="sweetalert/docs/assets/sweetalert/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert/src/sweetalert.css">
 
 
     <?php
@@ -146,7 +147,7 @@ session_start();
     ?>
 
 
-    <form method='POST' action='finalitzacio.php' name='dades' onsubmit="return validar()" >
+    <form method='POST' action='finalitzacio.php' name='dades' >
 
         <table>
             <tr>
@@ -155,11 +156,11 @@ session_start();
             </tr>
             <tr>
                 <td>Telefon:</td>
-                <td colspan='3'><input type='TEXT' name='telefono' size='25'></td>
+                <td colspan='3'><input type='TEXT' name='telefono' size='25' required></td>
             </tr>
             <tr>
                 <td>email:</td>
-                <td colspan='3'><input type='TEXT' name='email' size='25'></td>
+                <td colspan='3'><input type='TEXT' name='email' size='25' required></td>
             </tr>
             <input type='hidden' name='total' size='25' value= <?php echo $preciototal ?>>
             </Table><?php echo $llista ?> <p id ='total' > Total:  <?php echo $preciototal ?> €</p>
