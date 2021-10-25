@@ -7,7 +7,7 @@
     <link href="capçalera.css" rel="stylesheet" type="text/css">
     <link href="admin.css" rel="stylesheet" type="text/css">
     <title>Menu</title>
-    <script src="menu.js"></script>
+    <script src="js/administracio.js"></script>
 
     <?php
     include("header.php");
@@ -27,15 +27,7 @@
 
 
     <?php
-/*
 
-    if(empty($_COOKIE["compraRealitzada"])){
-
-    }else{
-       header("Location: error.php");
-    }
-
-*/
 
 
 
@@ -53,12 +45,7 @@ contarjsons();
 
 
 
-        $fi = new FilesystemIterator("comandesjson", FilesystemIterator::SKIP_DOTS);
-        printf("There were %d Files", iterator_count($fi));
-
-
-        $contados = iterator_count($fi);
-
+        $i = 0;
 
 
         foreach(glob("comandesjson".'/*.*') as $file) {
@@ -66,8 +53,9 @@ contarjsons();
             $dia_com = substr($file, 13, -5);
 
 
-            $divs .= "<div class='diacomanda' id = '$file'>Dia $dia_com </div>";
+            $divs .= "<div class='diacomanda' id = '$file'><button id = '$dia_com' onclick='cambiapagina($dia_com)'>Dia $dia_com</button></div>";
 
+            $i++;
             echo $file;
 
         }
@@ -77,6 +65,18 @@ contarjsons();
 
     }
 
+
+    function busca($nombre_fichero){
+
+
+
+        if (file_exists($nombre_fichero)) {
+            echo "El fichero $nombre_fichero existe";
+        } else {
+            echo "El fichero $nombre_fichero no existe";
+        }
+
+    }
 
 
 

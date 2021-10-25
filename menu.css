@@ -1,4 +1,4 @@
-.menu-list {
+   .menu-list {
     display: grid;
     grid-template-columns: 4fr 1fr;
     border-style: groove;
