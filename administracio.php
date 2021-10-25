@@ -63,7 +63,10 @@ contarjsons();
 
         foreach(glob("comandesjson".'/*.*') as $file) {
 
-            $divs .= "<div class='diacomanda' id = '$file'>Dia </div>";
+            $dia_com = substr($file, 13, -5);
+
+
+            $divs .= "<div class='diacomanda' id = '$file'>Dia $dia_com </div>";
 
             echo $file;
 

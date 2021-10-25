@@ -146,7 +146,7 @@ session_start();
     ?>
 
 
-    <form method='POST' action='finalitzacio.php' name='dades' onsubmit="return validar()" >
+    <form method='POST' action='finalitzacio.php' name='dades' >
 
         <table>
             <tr>
