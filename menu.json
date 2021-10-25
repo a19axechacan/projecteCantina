@@ -4,42 +4,42 @@
       "id": 0,
       "nom": "Entrepà de fuet",
       "descripció": "Entrepà de fuet petit",
-      "imatge": "css/150.png",
+      "imatge": "css/menu/fuet.jpg",
       "preu": 1.75
     },
     {
       "id": 1,
       "nom": "Entrepà de formatge",
       "descripció": "Entrepà de formatge petit",
-      "imatge": "css/150.png",
+      "imatge": "css/menu/queso.jpg",
       "preu": 1.50
     },
     {
       "id": 2,
       "nom": "Donut",
       "descripció": "Donut amb sucre",
-      "imatge": "css/150.png",
+      "imatge": "css/menu/donut.jpg",
       "preu": 0.60
     },
     {
       "id": 3,
       "nom": "Café",
       "descripció": "Café sol",
-      "imatge": "css/150.png",
+      "imatge": "css/menu/cafe.jpg",
       "preu": 1.20
     },
     {
       "id": 4,
       "nom": "Suc de taronja",
       "descripció": "Suc de taronja petit",
-      "imatge": "css/150.png",
+      "imatge": "css/menu/taronja.jpg",
       "preu": 2
     },
     {
       "id": 5,
       "nom": "Suc de pinya",
       "descripció": "Suc de pinya petit",
-      "imatge": "css/150.png",
+      "imatge": "css/menu/pinya.jpg",
       "preu": 0.75
     }
   ],
@@ -48,42 +48,42 @@
       "id": 6,
       "nom": "Entrepà de pernil dolç",
       "descripció": "Entrepà de pernil dolç petit",
-     "imatge": "css/150.png",
+     "imatge": "css/menu/pernil.jpg",
       "preu": 1.75
     },
     {
       "id": 7,
       "nom": "Entrepà de bacon",
       "descripció": "Entrepà de bacon petit",
-      "imatge": "css/150.png",
+      "imatge": "css/menu/bacon.jpg",
       "preu": 1.50
     },
     {
       "id": 8,
       "nom": "Kit-Kat",
       "descripció": "Kit-Kat original",
-      "imatge": "css/150.png",
+      "imatge": "css/menu/kitkat.jpg",
       "preu": 1.45
     },
     {
       "id": 9,
       "nom": "Café amb llet",
       "descripció": "Café amb llet desnatada",
-      "imatge": "css/150.png",
+      "imatge": "css/menu/cafellet.jpg",
       "preu": 1.60
     },
     {
       "id": 10,
       "nom": "Batut de xocolata",
       "descripció": "Entrepà de taronja petit",
-      "imatge": "css/150.png",
+      "imatge": "css/menu/chocolate.jpg",
       "preu": 2
     },
     {
       "id": 11,
       "nom": "Batut de maduixa",
       "descripció": "Batut de maduixa saludable",
-      "imatge": "css/150.png",
+      "imatge": "css/menu/maduixa.jpg",
       "preu": 2.10
     }
   ]
