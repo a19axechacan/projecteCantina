@@ -1,7 +1,6 @@
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 import 'sweetalert2/src/sweetalert2.scss'
-//document.getElementById("enviaform").addEventListener("click",  validate());
 
 Swal.fire({
     title: 'Error!',
@@ -9,8 +8,7 @@ Swal.fire({
     icon: 'error',
     confirmButtonText: 'Cool'
 })
-// Form validation code will come here.
-      function validate() {
+      function validar() {
       
         if( document.dades.nombre.value == "" ) {
             alert( "Nombre mal!" );

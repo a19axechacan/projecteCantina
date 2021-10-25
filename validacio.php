@@ -146,7 +146,7 @@ session_start();
     ?>
 
 
-    <form method='POST' action='finalitzacio.php' name='dades' >
+    <form method='POST' action='finalitzacio.php' name='dades' onsubmit="return validar()" >
 
         <table>
             <tr>
@@ -165,7 +165,7 @@ session_start();
             </Table><?php echo $llista ?> <p id ='total' > Total:  <?php echo $preciototal ?> €</p>
 
 
-            <input TYPE='SUBMIT' value='Envia' id='enviaform' onclick="return validate()" >
+            <input TYPE='SUBMIT' value='Envia' id='enviaform' onclick="return validar()" >
 
 
             </form>

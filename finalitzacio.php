@@ -90,7 +90,7 @@ session_start();
         print_r($arrayText);
        $text= json_encode($arrayText);
 
-        $filename =  date("d-m-Y") . ".json";
+        $filename =  "comandesjson/". date("d-m-Y") . ".json";
         $file = "";
         $compra="";
 
