@@ -77,7 +77,7 @@
         $form="";
         foreach ($menu as $element) {
             $form .= "  <div id=" . $element['id'] . ">" . "
-            <img src=".$element['imatge']." width='100%'>
+            <img src=".$element['imatge']." width='100%' height='277px'>
             <div class='menu-item-label'>
                     <label  for=" . $element['id'] . ">" . $element['nom'] . ":</label>
                     <br>

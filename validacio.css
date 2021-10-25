@@ -6,9 +6,49 @@
 }
 
 #total{
-
     font-size: 500%;
-
-
 }
 
+.validacio-container {
+    display: grid;
+    grid-template-columns: auto 600px;
+    border-style: solid;
+}
+
+.tiquet-container {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.formulari-container {
+    display: grid;
+    grid-template-rows: 62px 150px 80px;
+    border-style: solid;
+}
+
+#continuar {
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-bottom-style: groove;   
+}
+
+#formulari {
+    padding-top: 20px;
+    padding: 20px;
+}
+
+#enviar {
+    padding: 20px;
+}
+
+#enviaform {
+    padding: 20px;
+    width: 300px;
+    height: 100px;
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px 8px 8px 8px;
+}

@@ -26,7 +26,7 @@ session_start();
 <body>
 
 <div class="cuerpo">
-    <h1>Validacio de la compra</h1>
+    
 
 
 
@@ -147,29 +147,69 @@ session_start();
     ?>
 
 
-    <form method='POST' action='finalitzacio.php' name='dades' >
 
-        <table>
-            <tr>
-                <td>Nom:</td>
-                <td colspan='3'><input type='TEXT' name='nombre' size='25' required></td>
-            </tr>
-            <tr>
-                <td>Telefon:</td>
-                <td colspan='3'><input type='TEXT' name='telefono' size='25' required></td>
-            </tr>
-            <tr>
-                <td>email:</td>
-                <td colspan='3'><input type='TEXT' name='email' size='25' required></td>
-            </tr>
-            <input type='hidden' name='total' size='25' value= <?php echo $preciototal ?>>
-            </Table><?php echo $llista ?> <p id ='total' > Total:  <?php echo $preciototal ?> €</p>
+    <div class="validacio-container">
+        <div class="tiquet-container">
+            <div id="continuar">
+                <h3>La teva compra</h3>
+            </div>
+            <div id="formulari">
+                <form method='POST' action='finalitzacio.php' name='dades' >
+                <table>
+                    <tr>
+                        <td>Nom:</td>
+                        <td colspan='3'><input type='TEXT' name='nombre' size='25' required></td>
+                    </tr>
+                    <tr>
+                        <td>Telefon:</td>
+                        <td colspan='3'><input type='TEXT' name='telefono' size='25' required></td>
+                    </tr>
+                    <tr>
+                        <td>email:</td>
+                        <td colspan='3'><input type='TEXT' name='email' size='25' required></td>
+                    </tr>
+                    <input type='hidden' name='total' size='25' value= <?php echo $preciototal ?>>
+                </Table><?php echo $llista ?> <p id ='total' > Total:  <?php echo $preciototal ?> €</p>
+                
+            </div>
+            <div id="enviar">
+                <input TYPE='SUBMIT' value='Envia' id='enviaform' onclick="return validar()" >
+                </form>  
+            </div>
+            
+                
+        </div>
+        <div class="formulari-container">
+            <div id="continuar">
+                <h3>Omple aquests camps per continuar amb la compra</h3>
+            </div>
+            <div id="formulari">
+                <form method='POST' action='finalitzacio.php' name='dades' >
+                <table>
+                    <tr>
+                        <td>Nom:</td>
+                        <td colspan='3'><input type='TEXT' name='nombre' size='25' required></td>
+                    </tr>
+                    <tr>
+                        <td><br>Telefon:</td>
+                        <td colspan='3'><br><input type='TEXT' name='telefono' size='25' required></td>
+                    </tr>
+                    <tr>
+                        <td><br>Email:</td>
+                        <td colspan='3'><br><input type='TEXT' name='email' size='25' required></td>
+                    </tr>
+                </Table>
+                
+            </div>
+            <div id="enviar">
+                <input TYPE='SUBMIT' value='Comprar' id='enviaform' onclick="return validar()" >
+                </form>  
+            </div>
+    </div>    
 
 
-            <input TYPE='SUBMIT' value='Envia' id='enviaform' onclick="return validar()" >
-
-
-            </form>
+    
+    
 
 
 
