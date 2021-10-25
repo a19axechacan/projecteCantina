@@ -18,21 +18,43 @@
 }
 
 #menu {
-
-    border-style: solid;
-
+    border-right-style: groove;
 }
 
 #compra {
     padding-left: 10px;
     padding-right: 10px;
-    border-style: solid;
+}
+
+.compra-container {
+    display: grid;
+    grid-template-rows: 100px 410px 75px 80px;
 }
 
 #tuCompra {
     text-align: center;
+    padding-bottom: 15px;
+    border-bottom-style: groove;
 }
 
 #com {
     text-align: center;
+    border-top-style: solid;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom-style: solid;
+}
+
+#finalTiquet {
+    text-align: center;
+}
+
+#comprar {
+    width: 300px;
+    height: 100px;
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px 8px 8px 8px;
 }

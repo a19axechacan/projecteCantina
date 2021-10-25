@@ -108,24 +108,36 @@
                             echo htmlspecialchars($menuRead)
                    ?>
                                 ">
-                <button type='submit' id='comprar'>Comprar </button>  </form>
+                
         </div>
         <div id="compra">
-            <h3 id=tuCompra>El teu carrito:</h3>
-            <hr>
-            <h4 id="c0" class="card"></h4>
-            <h4 id="c1" class="card"></h4>
-            <h4 id="c2" class="card"></h4>
-            <h4 id="c3" class="card"></h4>
-            <h4 id="c4" class="card"></h4>
-            <h4 id="c5" class="card"></h4>
-            <h4 id="c6" class="card"></h4>
-            <h4 id="c7" class="card"></h4>
-            <h4 id="c8" class="card"></h4>
-            <h4 id="c9" class="card"></h4>
-            <h4 id="c10" class="card"></h4>
-            <h4 id="c11" class="card"></h4>
-            <h4 id="com">Total gastat: 0€</h4>
+            <div class="compra-container">
+                <div>
+                    <h3 id=tuCompra>El teu tiquet:</h3>
+                </div>
+                
+                <div>
+                    <h4 id="c0" class="card"></h4>
+                    <h4 id="c1" class="card"></h4>
+                    <h4 id="c2" class="card"></h4>
+                    <h4 id="c3" class="card"></h4>
+                    <h4 id="c4" class="card"></h4>
+                    <h4 id="c5" class="card"></h4>
+                    <h4 id="c6" class="card"></h4>
+                    <h4 id="c7" class="card"></h4>
+                    <h4 id="c8" class="card"></h4>
+                    <h4 id="c9" class="card"></h4>
+                    <h4 id="c10" class="card"></h4>
+                    <h4 id="c11" class="card"></h4>
+                </div>
+                <div>
+                    <h4 id="com">Total gastat: 0€</h4>
+                </div>
+                <div id="finalTiquet">
+                    <button type='submit' id='comprar'>Comprar </button>  </form>
+                </div>
+            </div>
+            
         </div>
     </div>    
 
