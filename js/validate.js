@@ -1,15 +1,20 @@
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 
-//document.getElementById("enviaform").addEventListener("click", return validate());
+import 'sweetalert2/src/sweetalert2.scss'
+//document.getElementById("enviaform").addEventListener("click",  validate());
 
+Swal.fire({
+    title: 'Error!',
+    text: 'Do you want to continue',
+    icon: 'error',
+    confirmButtonText: 'Cool'
+})
 // Form validation code will come here.
       function validate() {
       
         if( document.dades.nombre.value == "" ) {
-            Swal.fire(
-                'Good job!',
-                'You clicked the button!',
-                'success'
-            );
+            alert( "Nombre mal!" );
+
            document.dades.nombre.focus() ;
            return false;
         }
@@ -29,5 +34,5 @@
         
 
 
-        return( true );
+        return true ;
     }
