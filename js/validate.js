@@ -1,4 +1,5 @@
-    function validar() {
+
+      function validar() {
       
         if( document.dades.nombre.value == "" ) {
             alert( "Nombre mal!" );
