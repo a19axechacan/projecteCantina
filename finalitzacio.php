@@ -62,7 +62,7 @@ foreach ($compra as $elementComprat) {
 $textCompra.="]";
 
 
-$jsonArray["comanda"] =json_decode($textCompra);
+$jsonArray["comandes"] =json_decode($textCompra);
 
 
 exportacomanda($jsonArray);
