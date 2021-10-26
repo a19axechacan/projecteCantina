@@ -19,12 +19,24 @@
 
 <div class="comandes-container">
     <?php
+
+    function productInfo($arrayMenus, $id, $producte): string
+    {
+        foreach ($arrayMenus as $menu){
+            foreach ($menu as $menuElement) {
+                if ($menuElement["id"] == $id) {
+                    $productInfoText = "<div>Producte:" . $menuElement["nom"] . " x " . $producte["quantitat"] . " unitat/s</div>";
+                }
+            }
+        }
+        return $productInfoText;
+    }
+
+
     $menuFile = fopen("menu.json", "r");
     $menuRead = fread($menuFile, filesize("menu.json"));
     fclose($menuFile);
-    $json = json_decode($menuRead, true);
-    $menuDia = $json["dia"];
-    $menuTarde = $json["tarde"];
+    $arrayMenus = json_decode($menuRead, true);
 
 
     $filename = "comandesjson/" . date("d-m-Y") . ".json";
@@ -32,6 +44,7 @@
     $comandes = fread($comandesFile, filesize($filename));
     fclose($comandesFile);
     $arrayComandes = json_decode($comandes, true);
+
     foreach ($arrayComandes["comandes"] as $comanda) {
         $text = "<div class='comanda'>
         <div class='container'>
@@ -41,17 +54,9 @@
         foreach ($comanda["comandes"] as $elements) {
             foreach ($elements as $idProducte => $producte) {
 
-                foreach ($menuDia as $elementMenuDia) {
-                    if ($elementMenuDia["id"] == $idProducte) {
-                        $text .= "<div>Producte:" . $elementMenuDia["nom"] . "" . " x " . $producte["quantitat"] . " unitat/s</div>";
-                    }
-                }
 
-                foreach ($menuTarde as $elementMenuTarde) {
-                    if ($elementMenuTarde["id"] == $idProducte) {
-                        $text .= "<div>Producte:" . $elementMenuTarde["nom"] . " x " . $producte["quantitat"] . " unitat/s</div>";
-                    }
-                }
+                    $text .= productInfo($arrayMenus, $idProducte, $producte);
+
 
             }
         }
@@ -63,6 +68,7 @@
 
         echo $text;
     }
+
 
 
     ?>
