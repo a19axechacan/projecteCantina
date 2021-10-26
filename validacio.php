@@ -87,7 +87,8 @@ session_start();
                             "preuoriginal" => $elemento["preu"],
                             "quantitat" => $value,
                             "nom" => $elemento["nom"],
-                            "id" => $elemento["id"]
+                            "id" => $elemento["id"],
+                            "imatge" => $elemento["imatge"]
 
 
                         ];
@@ -103,7 +104,8 @@ session_start();
                             "preuoriginal" => $elemento["preu"],
                             "quantitat" => $value,
                             "nom" => $elemento["nom"],
-                            "id" => $elemento["id"]
+                            "id" => $elemento["id"],
+                            "imatge" => $elemento["imatge"]
 
                         ];
                     }
@@ -130,7 +132,7 @@ session_start();
         foreach ($array as $elemento) {
 
 
-            $llistaul .= " <li id =" . $elemento['id'] . ">" . $elemento["nom"] . "  quantitat: " . $elemento["quantitat"] . " preu: " . $elemento["preuoriginal"] . " € " . "</li>";
+            $llistaul .= " <div id =" . $elemento['id'] . ">" . "<img src=".$elemento['imatge']." width='50px' height='35px'> " . $elemento["quantitat"] . "x " . $elemento["nom"] . " " . $elemento["preuoriginal"] . "€ <hr>" . "</div>";
 
 
 
@@ -150,14 +152,12 @@ session_start();
     <div class="cuerpo">
         <div class="validacio-container">
             <div class="tiquet-container">
-                <div id="continuar">
+                <div id="continuar1">
                     <h3>La teva compra</h3>
                 </div>
                 <div id="tiquet">
-
                     <input type='hidden' name='total' size='25' value= <?php echo $preciototal ?>>
-                    <?php echo $llista ?> <p id ='total' > Total:  <?php echo $preciototal ?> €</p>
-                    
+                    <?php echo $llista ?> <p id ='total' > Total:  <?php echo $preciototal ?>€</p>
                 </div>
                 <div id="atras">
                     <form> <input type = "button" value = "Modificar compra" id='return' onclick = "history.back ()"> </form>                    
@@ -165,12 +165,13 @@ session_start();
                             
             </div>
             <div class="formulari-container">
-                <div id="continuar">
-                    <h3>Omple aquests camps per continuar amb la compra</h3>
+                <div id="continuar2">
+                    <h3>Dades personals</h3>
                 </div>
                 <div id="formulari">
                     <form method='POST' action='finalitzacio.php' name='dades' >
-                    <table>
+                    <p>Omple aquests camps per continuar amb la compra</p>
+                    <table id="table">
                         <tr>
                             <td>Nom:</td>
                             <td colspan='3'><input type='TEXT' name='nombre' size='25' required></td>
