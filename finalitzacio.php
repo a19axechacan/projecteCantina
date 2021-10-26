@@ -37,10 +37,39 @@ setcookie("compraRealitzada", true,
 $nom = $_POST["nombre"];
 $email = $_POST["email"];
 $telefono = $_POST["telefono"];
+$compra = json_decode($_SESSION["compra"], true);
+
 
 dibuixacomanda($nom, $email, $telefono);
+$jsonArray = [
+    "nom" => $nom,
+    "email" => $email,
+    "telefon" => $telefono,
+    "total"=>  $_SESSION["preuTotal"]
+];
 
-exportacomanda($_SESSION["compra"],$nom, $email, $telefono);
+$i=0;
+$textCompra= "[";
+foreach ($compra as $elementComprat) {
+
+    if(++$i===count($compra)){
+        $textCompra.="{\"".$elementComprat["id"]."\":{\"quantitat\":".$elementComprat["quantitat"]."}}";
+    }else{
+        $textCompra.="{\"".$elementComprat["id"]."\":{\"quantitat\":".$elementComprat["quantitat"]."}},";
+    }
+
+}
+$textCompra.="]";
+
+
+$jsonArray["comandes"] =json_decode($textCompra);
+
+
+exportacomanda($jsonArray);
+
+
+
+
 
 
 function dibuixacomanda($nom, $email, $telefono)
@@ -82,52 +111,42 @@ function dibuixacomanda($nom, $email, $telefono)
 
 }
 
-function exportacomanda($text,$nom, $email, $telefono)
+function exportacomanda($arrayJson)
 {
 
 
+    $text = json_encode($arrayJson);
 
+    $filename = "comandesjson/" . date("d-m-Y") . ".json";
+    $file = "";
+    $compra = "";
 
-    $arrayText = json_decode($text, true);
+    if (file_exists($filename) == true) {
 
-    $arrayText["id"] = "comanda1";
-    $arrayText["nom"] = $nom;
-    $arrayText["email"] = $email;
-    $arrayText["telefono"] = $telefono;
-
-       $text = json_encode($arrayText);
-
-        $filename = "comandesjson/" . date("d-m-Y") . ".json";
-        $file = "";
-        $compra = "";
-
-        if (file_exists($filename) == true) {
-
-            $file = fopen($filename, "r");
-            $compra = json_decode(fread($file, filesize($filename)), true);
-            fclose($file);
-            $compraActualitzada = array_push($compra["comandes"], $arrayText);
-
-            $file = fopen($filename, "w");
-            fwrite($file, json_encode($compra));
-            fclose($file);
-
-        } else {
-
-            touch($filename);
-            $file = fopen($filename, "w");
-            fwrite($file, "{\"comandes\":[" . $text . "]}");
-            fclose($file);
-
-
-        }
         $file = fopen($filename, "r");
-        $compra = fread($file, filesize($filename));
+        $compra = json_decode(fread($file, filesize($filename)), true);
+        fclose($file);
+        $compraActualitzada = array_push($compra["comandes"], $arrayJson);
+
+        $file = fopen($filename, "w");
+        fwrite($file, json_encode($compra));
+        fclose($file);
+
+    } else {
+
+        touch($filename);
+        $file = fopen($filename, "w");
+        fwrite($file, "{\"comandes\":[" . $text . "]}");
         fclose($file);
 
 
-
     }
+    $file = fopen($filename, "r");
+    $compra = fread($file, filesize($filename));
+    fclose($file);
+
+
+}
 
 
 ?>
