@@ -5,20 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="capçalera.css" rel="stylesheet" type="text/css">
+    <link href="admin.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 
     <?php
     include("header.php");
-    ?>
-
-</head>
-<body>
-
-<h1>Administració</h1>
-
-
-<div class="comandes-container">
-    <?php
 
     function productInfo($arrayMenus, $id, $producte): string
     {
@@ -44,6 +35,19 @@
     $comandes = fread($comandesFile, filesize($filename));
     fclose($comandesFile);
     $arrayComandes = json_decode($comandes, true);
+
+
+
+    ?>
+
+</head>
+<body>
+
+<h1>Administració</h1>
+
+
+<div class="comandes-container">
+    <?php
 
     foreach ($arrayComandes["comandes"] as $comanda) {
         $text = "<div class='comanda'>
