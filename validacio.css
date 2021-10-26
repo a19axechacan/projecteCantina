@@ -1,7 +1,22 @@
 #llista{
-    display: grid;
     font-size: 150%;
+    width: 100%;
+}
 
+#table {
+    border-left-style: groove;
+    border-bottom-style: groove;
+}
+
+#table2 {
+    text-align: center;
+    border-bottom-style: groove;
+}
+
+#table3 {
+    text-align: center;
+    border-left-style: groove;
+    border-bottom-style: groove;
 }
 
 #total{
@@ -20,13 +35,13 @@
 }
 
 #tiquet {
+    margin: 20px;
     padding: 20px;
-    border-style: solid;
+    border-bottom-style: dashed;
 }
 
 #atras {
     padding: 20px;
-    border-style: solid;
 }
 
 #return {
@@ -66,7 +81,7 @@
     margin-top: 10px;
 }
 
-#table {
+#tabla {
     margin-top: 35px;
 }
 
@@ -74,7 +89,6 @@
     align-self: end;
     text-align: end;
     padding: 20px;
-    border-style: solid;
 }
 
 #enviaform {

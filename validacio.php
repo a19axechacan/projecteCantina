@@ -25,11 +25,6 @@ session_start();
 </head>
 <body>
 
-
-    
-
-
-
     <?php
 
     $llista = "";
@@ -123,30 +118,21 @@ session_start();
     function imprimicion(&$array, &$preciototal, &$llista, &$llistaJson)
     {
 
-
         $llistaul = "";
         $llistahidden = "";
         $preciototal = 0;
 
-
         foreach ($array as $elemento) {
 
-
-            $llistaul .= " <div id =" . $elemento['id'] . ">" . "<img src=".$elemento['imatge']." width='50px' height='35px'> " . $elemento["quantitat"] . "x " . $elemento["nom"] . " " . $elemento["preuoriginal"] . "€ <hr>" . "</div>";
-
-
+            $llistaul .= "<tr> <td id='table2'><img src=".$elemento['imatge']." width='50px' height='35px'/></td> <td id='table3'>".$elemento['quantitat']."</td> <td id='table'>".$elemento['nom']."</td> <td id='table'>".$elemento['preuoriginal']."€"."</td> <td id='table'>".$elemento['preu']."€"."</td> </tr>"; 
 
             $preciototal += $elemento["preu"];
-
 
         }
 
         $_SESSION["preuTotal"]=$preciototal;
-        $llista = "<div id='llista'>" . $llistaul . $llistahidden . "</div>";
-
+        $llista = "<table id='llista'>  <thead> <tr> <th id='table2'>Imatge</th> <th id='table'>Cantitat</th> <th id='table'>Nom</th> <th id='table'>Preu</th> <th id='table'>SubTotal</th> </tr> </thead> <tbody> " . $llistaul . $llistahidden . " </tbody> </table>";
     }
-
-
     ?>
 
     <div class="cuerpo">
@@ -157,7 +143,8 @@ session_start();
                 </div>
                 <div id="tiquet">
                     <input type='hidden' name='total' size='25' value= <?php echo $preciototal ?>>
-                    <?php echo $llista ?> <p id ='total' > Total:  <?php echo $preciototal ?>€</p>
+                    <?php echo $llista ?>
+                    <p id ='total' > Total:  <?php echo $preciototal ?>€</p>            
                 </div>
                 <div id="atras">
                     <form> <input type = "button" value = "Modificar compra" id='return' onclick = "history.back ()"> </form>                    
@@ -171,7 +158,7 @@ session_start();
                 <div id="formulari">
                     <form method='POST' action='finalitzacio.php' name='dades' >
                     <p>Omple aquests camps per continuar amb la compra</p>
-                    <table id="table">
+                    <table id="tabla">
                         <tr>
                             <td>Nom:</td>
                             <td colspan='3'><input type='TEXT' name='nombre' size='25' required></td>
@@ -196,8 +183,7 @@ session_start();
 </body>
 
     <?php
-        include("footer.php")
+    include("footer.php");
     ?>
-
 
 </html>
