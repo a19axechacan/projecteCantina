@@ -138,9 +138,10 @@ session_start();
 
             $preciototal += $elemento["preu"];
 
+
         }
 
-
+        $_SESSION["preuTotal"]=$preciototal;
         $llista = "<div id='llista'>" . $llistaul . $llistahidden . "</div>";
 
     }

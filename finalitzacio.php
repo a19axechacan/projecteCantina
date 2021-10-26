@@ -19,51 +19,52 @@ session_start();
 
 </head>
 <body>
-    <div class="cuerpo">
-        <h1>Comanda confirmada</h1>
-           </div>
+<div class="cuerpo">
+    <h1>Comanda confirmada</h1>
+</div>
 
 
+<?php
 
-    <?php
-
-    setcookie("compraRealitzada", true,
-        ['expires'=>strtotime('today 23:59'),
-            'path'=>'/',
-            'samesite'=> 'Strict'
-        ]
-    );
-
-     dibuixacomanda();
-
-    exportacomanda($_SESSION["compra"]);
+setcookie("compraRealitzada", true,
+    ['expires' => strtotime('today 23:59'),
+        'path' => '/',
+        'samesite' => 'Strict'
+    ]
+);
 
 
-    function dibuixacomanda()
-    {
+$nom = $_POST["nombre"];
+$email = $_POST["email"];
+$telefono = $_POST["telefono"];
 
-        $divtext = "";
+dibuixacomanda($nom, $email, $telefono);
 
-        $nom = $_POST["nombre"];
-        $email = $_POST["email"];
-        $telefono = $_POST["telefono"];
-        $cosaspedidas = "";
-        $textoli = "";
-        $total = $_POST["total"];
-        print_r($_SESSION["compra"]);
-
-        $jsonCompra = json_decode($_SESSION["compra"],true);
+exportacomanda($_SESSION["compra"],$nom, $email, $telefono);
 
 
+function dibuixacomanda($nom, $email, $telefono)
+{
 
-        foreach ($jsonCompra as $item){
-            $textoli .= "<li>" . $item["nom"].": ".$item["quantitat"]  ." unitat/s</li>";
-        }
+    $divtext = "";
 
 
-        $cosaspedidas = "<ul>" . $textoli . "</ul>";
+    $cosaspedidas = "";
+    $textoli = "";
+    $total = $_SESSION["preuTotal"];
 
-        $divtext .= "<div id='dades'>    
+
+    $jsonCompra = json_decode($_SESSION["compra"], true);
+
+
+    foreach ($jsonCompra as $item) {
+        $textoli .= "<li>" . $item["nom"] . ": " . $item["quantitat"] . " unitat/s</li>";
+    }
+
+
+    $cosaspedidas = "<ul>" . $textoli . "</ul>";
+
+    $divtext .= "<div id='dades'>    
                             <ul class='dadescli'>
                             <li>Nom del client: $nom</li>
                             <li>Email del client: $email</li>
@@ -76,48 +77,52 @@ session_start();
 
                         </div>";
 
-        echo $divtext;
+    echo $divtext;
+
+
+}
+
+function exportacomanda($text,$nom, $email, $telefono)
+{
 
 
 
-    }
 
-    function exportacomanda($text){
+    $arrayText = json_decode($text, true);
 
-       $arrayText= json_decode($text, true);
-       print_r($arrayText);
-       $arrayText["id"]= "comanda1";
-        print_r($arrayText);
-       $text= json_encode($arrayText);
+    $arrayText["id"] = "comanda1";
+    $arrayText["nom"] = $nom;
+    $arrayText["email"] = $email;
+    $arrayText["telefono"] = $telefono;
 
-        $filename =  "comandesjson/". date("d-m-Y") . ".json";
+       $text = json_encode($arrayText);
+
+        $filename = "comandesjson/" . date("d-m-Y") . ".json";
         $file = "";
-        $compra="";
+        $compra = "";
 
-        if(file_exists($filename) == true){
-            echo "el fichero existe";
+        if (file_exists($filename) == true) {
+
             $file = fopen($filename, "r");
-            $compra=  json_decode(fread($file, filesize($filename)),true);
+            $compra = json_decode(fread($file, filesize($filename)), true);
             fclose($file);
-            $compraActualitzada =array_push($compra["comandes"], $arrayText);
-            print_r($compra);
+            $compraActualitzada = array_push($compra["comandes"], $arrayText);
+
             $file = fopen($filename, "w");
             fwrite($file, json_encode($compra));
             fclose($file);
 
-        }
+        } else {
 
-        else {
-            echo  "El fichero no existe";
             touch($filename);
             $file = fopen($filename, "w");
-            fwrite($file, "{\"comandes\":[".$text."]}");
+            fwrite($file, "{\"comandes\":[" . $text . "]}");
             fclose($file);
 
 
         }
         $file = fopen($filename, "r");
-        $compra=  fread($file, filesize($filename));
+        $compra = fread($file, filesize($filename));
         fclose($file);
 
 
@@ -125,18 +130,13 @@ session_start();
     }
 
 
-    ?>
-
-
-
-
-
+?>
 
 
 </body>
 
-    <?php
-    include("footer.php");
-    ?>
+<?php
+include("footer.php");
+?>
 
 </html>
