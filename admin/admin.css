@@ -5,12 +5,16 @@
 
 .comandes-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 5%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 #O {
     font-size: 25px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
     padding: 5%;
+}
+.comanda{
+    margin: 20px;
+    border-bottom-style: groove;
+    border-right-style: groove;
 }

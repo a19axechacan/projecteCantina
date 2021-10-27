@@ -64,17 +64,17 @@
 </head>
 <body>
 
-<h1>Administració</h1>
+<div class="cuerpo">
 
-
+    <div class="comandes-container">
 <?php
 
 //Si el fitxer existeix s'utilitza l'array anteriorment creat per imprimir la informació de cada comanda
 //Sino s'imprimeix un missatge d'error
-if (file_exists($filename)) {
 
+if (file_exists($filename)) {
     foreach ($arrayComandes["comandes"] as $comanda) {
-        $text = "<div class='comandes-container'> <div class='comanda'>
+        $text = " <div class='comanda'>
         <div class='container'>
             <h4><b>" . $comanda["email"] . "</b></h4>";
 
@@ -87,17 +87,20 @@ if (file_exists($filename)) {
 
         $text .= "<p><b>Total: " . $comanda["total"] . "€</b></p>
         </div>
-    </div> </div>";
+    </div> ";
         echo $text;
     }
-} else {
-    echo getMissatgeError();
 }
 
 
 ?>
-
-
+        </div>
+    <?php
+    if(!file_exists($filename)){
+        echo getMissatgeError();
+    }
+    ?>
+</div>
 </body>
 
 <?php
