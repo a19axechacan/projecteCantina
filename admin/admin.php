@@ -9,7 +9,7 @@
     <title>Document</title>
 
     <?php
-    include("../header.php");
+    include("../assets/header.php");
 
     function productInfo($arrayMenus, $id, $producte): string
     {
@@ -83,7 +83,7 @@
 </body>
 
 <?php
-include("../footer.php");
+include("../assets/footer.php");
 ?>
 
 </html>

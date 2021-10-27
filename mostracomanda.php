@@ -10,7 +10,7 @@
     <script src="js/administracio.js"></script>
 
     <?php
-    include("header.php");
+    include("assets/header.php");
     ?>
 
 </head>
@@ -29,7 +29,7 @@ MOSTRACOMANDA
 </body>
 
 <?php
-include("footer.php");
+include("assets/footer.php");
 ?>
 
 </html>

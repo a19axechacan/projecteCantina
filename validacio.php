@@ -19,7 +19,7 @@ session_start();
 
 
     <?php
-    include("header.php")
+    include("assets/header.php")
     ?>
 
 </head>
@@ -183,7 +183,7 @@ session_start();
 </body>
 
     <?php
-    include("footer.php");
+    include("assets/footer.php");
     ?>
 
 </html>

@@ -10,7 +10,7 @@
     <script src="menu.js"></script>
 
     <?php
-    include("header.php");
+    include("assets/header.php");
     ?>
 
 </head>
@@ -145,7 +145,7 @@
 </body>
 
     <?php
-    include("footer.php");
+    include("assets/footer.php");
     ?>
 
 </html>

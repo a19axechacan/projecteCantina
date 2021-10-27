@@ -14,7 +14,7 @@ session_start();
     <title>Document</title>
 
     <?php
-    include("header.php");
+    include("assets/header.php");
     ?>
 
 </head>
@@ -117,7 +117,7 @@ function exportacomanda($arrayJson)
 
     $text = json_encode($arrayJson);
 
-    $filename = "comandesjson/" . date("d-m-Y") . ".json";
+    $filename = "admin/comandesjson/" . date("d-m-Y") . ".json";
     $file = "";
     $compra = "";
 
@@ -155,7 +155,7 @@ function exportacomanda($arrayJson)
 </body>
 
 <?php
-include("footer.php");
+include("assets/footer.php");
 ?>
 
 </html>
