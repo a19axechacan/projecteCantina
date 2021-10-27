@@ -3,9 +3,9 @@ window.onload = function () {
 
     const json = JSON.parse(document.getElementById("json").value);
 
+    botonComprar.disabled= true;
 
-
-    document.getElementById("comprar").addEventListener("click", pasajson());
+    document.getElementById("botonComprar").addEventListener("click", pasajson());
 
 
 
@@ -20,7 +20,7 @@ window.onload = function () {
     else if (hora > 11) {
         document.getElementById("horariDia").value = false;
         document.getElementById("menuDia").style.display = "none";
-    } 
+    }
     else {
         if (minutes < 30) {
             document.getElementById("horariDia").value = true;
@@ -29,7 +29,7 @@ window.onload = function () {
         else {
             document.getElementById("horariDia").value = false;
             document.getElementById("menuDia").style.display = "none";
-        }  
+        }
     }
 
 
@@ -38,7 +38,7 @@ window.onload = function () {
 
     document.getElementById("formMenu").addEventListener("click", function (e) {
 
-        let id= e.target.parentNode.parentNode.id;
+        let id = e.target.parentNode.parentNode.id;
         if (e.target.classList.contains("suma")) {
             sumarProducte(id);
             sumaCarrito();
@@ -48,6 +48,19 @@ window.onload = function () {
 
         }
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -140,69 +153,78 @@ window.onload = function () {
                 }
             }
             if (input.value == 0) {
-               
+
                 document.getElementById("c" + id).style.display = "none";
             }
         }
 
-        }
+    }
 
-        function sumaCarrito() {
-            let inputs = document.querySelectorAll("input[type=text]");
+    function sumaCarrito() {
+        let inputs = document.querySelectorAll("input[type=text]");
 
-            let compra = [];
+        let compra = [];
 
-            for (let index = 0; index < inputs.length; index++) {
+        for (let index = 0; index < inputs.length; index++) {
 
 
-                for (element of json.dia) {
-                    if (element.id == index) {
-                        let item = {
-                            "nom": element.nom,
-                            "id": element.id,
-                            "preu": element.preu,
-                            "quantitat": inputs[index].value
-                        }
-
-                        if (item.quantitat > 0) {
-                            compra.push(item);
-                        }
+            for (element of json.dia) {
+                if (element.id == index) {
+                    let item = {
+                        "nom": element.nom,
+                        "id": element.id,
+                        "preu": element.preu,
+                        "quantitat": inputs[index].value
                     }
 
-                }
-
-                for (element of json.tarde) {
-                    if (element.id == index) {
-                        let item = {
-                            "nom": element.nom,
-                            "id": element.id,
-                            "preu": parseFloat(element.preu),
-                            "quantitat": parseInt(inputs[index].value)
-                        }
-
-                        if (item.quantitat > 0) {
-                            compra.push(item);
-                        }
+                    if (item.quantitat > 0) {
+                        compra.push(item);
                     }
                 }
-
-
-            };
-            let suma = 0;
-
-            for (producte of compra) {
-
-
-                let sumaproducte = producte.preu * producte.quantitat;
-                suma += sumaproducte;
 
             }
 
+            for (element of json.tarde) {
+                if (element.id == index) {
+                    let item = {
+                        "nom": element.nom,
+                        "id": element.id,
+                        "preu": parseFloat(element.preu),
+                        "quantitat": parseInt(inputs[index].value)
+                    }
 
-            document.getElementById("com").innerHTML = "Total Gastat: " + suma.toFixed(2) + "€";
+                    if (item.quantitat > 0) {
+                        compra.push(item);
+                    }
+                }
+            }
 
 
+        };
+        let suma = 0;
+
+        for (producte of compra) {
+
+
+            let sumaproducte = producte.preu * producte.quantitat;
+            suma += sumaproducte;
 
         }
+        let botonComprar= document.getElementById("botonComprar")
+
+        if (suma == 0) {
+            botonComprar.disabled= true;
+        }
+        else {
+            botonComprar.disabled= false;
+        }
+
+
+
+        document.getElementById("com").innerHTML = "Total Gastat: " + suma.toFixed(2) + "€";
+
+
 
     }
+
+}
