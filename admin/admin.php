@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="capçalera.css" rel="stylesheet" type="text/css">
+    <link href="../capçalera.css" rel="stylesheet" type="text/css">
     <link href="admin.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 
     <?php
-    include("header.php");
+    include("../header.php");
 
     function productInfo($arrayMenus, $id, $producte): string
     {
@@ -24,8 +24,8 @@
     }
 
 
-    $menuFile = fopen("menu.json", "r");
-    $menuRead = fread($menuFile, filesize("menu.json"));
+    $menuFile = fopen("../menu.json", "r");
+    $menuRead = fread($menuFile, filesize("../menu.json"));
     fclose($menuFile);
     $arrayMenus = json_decode($menuRead, true);
 
@@ -83,7 +83,7 @@
 </body>
 
 <?php
-include("footer.php");
+include("../footer.php");
 ?>
 
 </html>
