@@ -7,7 +7,7 @@
     <link href="capçalera.css" rel="stylesheet" type="text/css">
     <link href="menu.css" rel="stylesheet" type="text/css">
     <title>Menu</title>
-    <script src="menu.js"></script>
+    <script src="js/menu.js"></script>
 
     <?php
     include("assets/header.php");
@@ -27,6 +27,7 @@
 
 
     <?php
+
 /*
 
     if(empty($_COOKIE["compraRealitzada"])){

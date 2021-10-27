@@ -136,7 +136,7 @@ function exportacomanda($arrayJson)
 
         touch($filename);
         $file = fopen($filename, "w");
-        fwrite($file, "{\"comandes\":[" . $text . "]}");
+        fwrite($file, "{admin\"comandes\":[" . $text . "]}");
         fclose($file);
 
 
