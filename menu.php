@@ -16,15 +16,7 @@
 </head>
 <body>
 <div class="cuerpo">
-    <h1>menu</h1>
-
-
-
-
-
-
-
-
+    <h1>Menu especial</h1>
 
     <?php
 
@@ -37,11 +29,6 @@
     }
 
 */
-
-
-
-
-
 
 
     $menuFile = fopen("menu.json", "r");
@@ -70,10 +57,6 @@
     $form .= "<input type='hidden' id ='jsoncompra' name='jsoncompra'>";
 
 
-
-
-
-
     function writeMenu($menu){
         $form="";
         foreach ($menu as $element) {
@@ -94,11 +77,6 @@
     }
     
     ?>
-
-
-
-
-
 
     <div class="menu-list">
         <div id="menu">

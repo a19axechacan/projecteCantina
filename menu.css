@@ -1,6 +1,6 @@
    .menu-list {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 80% 20%;
     border-style: groove;
 }
 
@@ -28,7 +28,7 @@
 
 .compra-container {
     display: grid;
-    grid-template-rows: 100px 410px 75px 80px;
+    grid-template-rows: 15% 410px 11.25% auto;
 }
 
 #tuCompra {
@@ -39,9 +39,9 @@
 
 #com {
     text-align: center;
-    border-top-style: solid;
     padding-top: 15px;
     padding-bottom: 15px;
+    border-top-style: solid;
     border-bottom-style: solid;
 }
 

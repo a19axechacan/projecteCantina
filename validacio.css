@@ -25,13 +25,13 @@
 
 .validacio-container {
     display: grid;
-    grid-template-columns: auto 500px;
+    grid-template-columns: 70.5% 29.5%;
     border-style: groove;
 }
 
 .tiquet-container {
     display: grid;
-    grid-template-rows: 80px auto auto;
+    grid-template-rows: 10.5% auto auto;
 }
 
 #tiquet {
@@ -58,7 +58,7 @@
 
 .formulari-container {
     display: grid;
-    grid-template-rows: 80px auto auto;
+    grid-template-rows: 10.5% auto auto;
     border-style: groove;
 }
 
