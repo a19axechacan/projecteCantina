@@ -113,7 +113,7 @@
                     <h4 id="com">Total gastat: 0€</h4>
                 </div>
                 <div id="finalTiquet">
-                    <button type='submit' id='comprar'>Comprar </button>  </form>
+                    <button type='submit' id='botonComprar'>Comprar </button>  </form>
                 </div>
             </div>
             
