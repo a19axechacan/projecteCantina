@@ -43,41 +43,34 @@
 </head>
 <body>
 
-<h1>Administració</h1>
+<div class="cuerpo">
+    <h1>Administració</h1>
+    <div class="comandes-container">
+        <?php
 
+        foreach ($arrayComandes["comandes"] as $comanda) {
+            $text = "<div class='comanda'>
+            <div class='container'>
+                <h4><b>" . $comanda["email"] . "</b></h4>";
 
-<div class="comandes-container">
-    <?php
+            foreach ($comanda["comandes"] as $elements) {
+                foreach ($elements as $idProducte => $producte) {
 
-    foreach ($arrayComandes["comandes"] as $comanda) {
-        $text = "<div class='comanda'>
-        <div class='container'>
-            <h4><b>" . $comanda["email"] . "</b></h4>";
+                        $text .= productInfo($arrayMenus, $idProducte, $producte);
 
-
-        foreach ($comanda["comandes"] as $elements) {
-            foreach ($elements as $idProducte => $producte) {
-
-
-                    $text .= productInfo($arrayMenus, $idProducte, $producte);
-
-
+                }
             }
+            $text .= "<p></p><p><b>Total: " . $comanda["total"] . "€</b></p>
+            </div>
+        </div>";
+
+            echo $text;
         }
 
-        $text .= "<p><b>Total: " . $comanda["total"] . "€</b></p>
-        </div>
-    </div>";
-
-
-        echo $text;
-    }
-
-
-
-    ?>
-
+        ?>
+    </div>
 </div>
+    
 
 
 </body>
