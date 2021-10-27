@@ -8,7 +8,7 @@
            return false;
         }
         if( document.dades.telefono.value == "" || isNaN( document.dades.telefono.value ) ||
-        document.dades.telefono.value.length != 9) {
+        document.dades.telefono.value.length != 9 || (isNaN( document.dades.telefono.value ) &&  document.dades.telefono.value.length != 9)){
             alert( "Telefono mal!" );
 
            document.dades.telefon.focus() ;
