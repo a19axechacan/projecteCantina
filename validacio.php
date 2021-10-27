@@ -178,6 +178,7 @@ session_start();
                     <input TYPE='SUBMIT' value='Comprar' id='enviaform' onclick="return validar()" >
                     </form>  
                 </div>
+            </div>
         </div>    
     </div>
 </body>

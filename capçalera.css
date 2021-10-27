@@ -28,7 +28,7 @@ footer {
 
 .header-container {
     display: grid;
-    grid-template-columns: 150px auto 250px;
+    grid-template-columns: 8% 78.75% 13.25%;
     grid-gap: 10px;
 }
 
@@ -47,6 +47,10 @@ footer {
 #logo {
     margin-left: 25px;
     margin-top: 25px;
+    text-align: center;
+}
+
+#sitiologo{
     text-align: center;
 }
 

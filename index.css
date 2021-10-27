@@ -1,12 +1,12 @@
 .admin-container {
     display: grid;
-    grid-template-columns: auto 200px;
+    grid-template-columns: auto 11.75%;
     grid-gap: 10px;
 }
 
 .CTA-container {
     display: grid;
-    grid-template-columns: 730px 730px 210px;
+    grid-template-columns: 41.25% 41.25% auto;
     border-top-style: groove;
     border-bottom-style: groove;
 }
