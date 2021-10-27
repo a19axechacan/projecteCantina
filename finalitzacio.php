@@ -26,53 +26,9 @@ session_start();
 
 <?php
 
-setcookie("compraRealitzada", true,
-    ['expires' => strtotime('today 23:59'),
-        'path' => '/',
-        'samesite' => 'Strict'
-    ]
-);
 
-
-$nom = $_POST["nombre"];
-$email = $_POST["email"];
-$telefono = $_POST["telefono"];
-$compra = json_decode($_SESSION["compra"], true);
-
-
-dibuixacomanda($nom, $email, $telefono);
-$jsonArray = [
-    "nom" => $nom,
-    "email" => $email,
-    "telefon" => $telefono,
-    "total"=>  $_SESSION["preuTotal"]
-];
-
-$i=0;
-$textCompra= "[";
-foreach ($compra as $elementComprat) {
-
-    if(++$i===count($compra)){
-        $textCompra.="{\"".$elementComprat["id"]."\":{\"quantitat\":".$elementComprat["quantitat"]."}}";
-    }else{
-        $textCompra.="{\"".$elementComprat["id"]."\":{\"quantitat\":".$elementComprat["quantitat"]."}},";
-    }
-
-}
-$textCompra.="]";
-
-
-$jsonArray["comandes"] =json_decode($textCompra);
-
-
-exportacomanda($jsonArray);
-
-
-
-
-
-
-function dibuixacomanda($nom, $email, $telefono)
+//Aquesta funció pinta la comanda feta pel client i les seves dades
+function dibuixaComanda($nom, $email, $telefono)
 {
 
     $divtext = "";
@@ -111,7 +67,12 @@ function dibuixacomanda($nom, $email, $telefono)
 
 }
 
-function exportacomanda($arrayJson)
+
+
+//Si el fitxer de comandes no existeix, es crea amb la primera comanda
+//Si el fitxer ja existeix es torna a escriure el fitxer, però, afegint la nova comanda
+//Totes les comandes estan escrites en format JSON
+function exportaComanda($arrayJson)
 {
 
 
@@ -149,6 +110,58 @@ function exportacomanda($arrayJson)
 }
 
 
+
+
+
+
+//Creem la cookie "CompraRealitzada" que expirarà el mateix dia a les 23:59
+//per tal de que es pugui tornar a fer una compra el dia següent
+setcookie("compraRealitzada", true,
+    ['expires' => strtotime('today 23:59'),
+        'path' => '/',
+        'samesite' => 'Strict'
+    ]
+);
+
+
+
+//Recuperem les dades del client amb els POST
+$nom = $_POST["nombre"];
+$email = $_POST["email"];
+$telefono = $_POST["telefono"];
+//Recuperem la compra amb SESSION, tot transformant-la en un array associatiu
+$compra = json_decode($_SESSION["compra"], true);
+
+//Dibuixem la comanda
+dibuixaComanda($nom, $email, $telefono);
+//Creem un array associatiu que posteriorment serà transformat a JSON per ser escrit en un fitxer
+$jsonArrayComandes = [
+    "nom" => $nom,
+    "email" => $email,
+    "telefon" => $telefono,
+    "total"=>  $_SESSION["preuTotal"]
+];
+
+
+//Al array associatiu li afegirem un nou camp on estaran tots els productes comprats per un client en format JSON
+$i=0;
+$textCompra= "[";
+foreach ($compra as $elementComprat) {
+
+    if(++$i===count($compra)){
+        $textCompra.="{\"".$elementComprat["id"]."\":{\"quantitat\":".$elementComprat["quantitat"]."}}";
+    }else{
+        $textCompra.="{\"".$elementComprat["id"]."\":{\"quantitat\":".$elementComprat["quantitat"]."}},";
+    }
+
+}
+$textCompra.="]";
+
+//Transformem textCompra en un JSON i l'incloem en el JSON associatiu
+$jsonArrayComandes["comandes"] =json_decode($textCompra);
+
+//Escrivim el json en el fitxer
+exportaComanda($jsonArrayComandes);
 ?>
 
 
