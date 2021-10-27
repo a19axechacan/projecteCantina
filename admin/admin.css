@@ -8,3 +8,9 @@
     grid-template-columns: 1fr 1fr 1fr;
     padding: 5%;
 }
+#O {
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 5%;
+}
