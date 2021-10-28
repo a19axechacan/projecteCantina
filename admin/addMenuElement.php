@@ -51,6 +51,13 @@ if($nouProducteHorari== "dia"){
 
 $jsonMenu = json_encode($arrayMenus, JSON_UNESCAPED_UNICODE);
 
+
+if(file_put_contents("../menu.json", $jsonMenu)!=false){
+    header("Location: /projecteCantina/admin/adminMenu.php");
+}
+
+
+
 $filename= "../menu.json";
 touch($filename);
 $file = fopen($filename, "w");
