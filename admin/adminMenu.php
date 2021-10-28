@@ -56,7 +56,7 @@
 
         </div>
         <div>
-            <form name="producteNouForm" id="producteNouForm" action="process.php" method="POST" >
+            <form name="producteNouForm" id="producteNouForm" action="addMenuElement.php" method="POST" >
             <h2>Nou producte</h2>
 
             <div>

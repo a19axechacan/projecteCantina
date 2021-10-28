@@ -31,7 +31,7 @@ $producteNou = array(
     "nom"=>utf8_encode($_POST["nomProducte"]),
     "descripció"=>utf8_encode($_POST["descProducte"]),
     "imatge"=>"css/menu/150.png",
-    "preu"=> $_POST["preuProducte"]
+    "preu"=> floatval($_POST["preuProducte"])
 );
 
 
@@ -39,10 +39,11 @@ $producteNou = array(
 
 
 do {
-    $novaId = rand(0,13);
+    $novaId = rand(0,999);
     $producteNou["id"]=$novaId;
 } while (repeatedId($arrayMenus, $novaId)==true);
-if(strcmp($nouProducteHorari, "dia")){
+
+if($nouProducteHorari== "dia"){
     array_push($arrayMenus["dia"],$producteNou);
 }else{
     array_push($arrayMenus["tarde"],$producteNou);
