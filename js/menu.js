@@ -1,8 +1,10 @@
+//En el moment en el que la pagina carga 
 window.onload = function () {
 
-
+    //Es recupera el json del element amb la id json
     const json = JSON.parse(document.getElementById("json").value);
 
+    //Es desabilita l'opcio fins que afegeixi un element
     botonComprar.disabled= true;
 
     document.getElementById("botonComprar").addEventListener("click", pasajson());
@@ -12,7 +14,7 @@ window.onload = function () {
     let hora = new Date().getHours();
     let minutes = new Date().getMinutes();
 
-
+    //Mostrem el menu que correspon en el moment en el moment que es carga la pagina
     if (hora < 11) {
         document.getElementById("horariDia").value = true;
         document.getElementById("menuTarde").style.display = "none";
@@ -35,7 +37,10 @@ window.onload = function () {
 
 
 
-
+    //S'afageix un listener per a que quan es modifiqui la comanda fagi les següents fucions
+    //sumaProducte
+    //restarProducte
+    //sumaCarrito
     document.getElementById("formMenu").addEventListener("click", function (e) {
 
         let id = e.target.parentNode.parentNode.id;
@@ -111,8 +116,9 @@ window.onload = function () {
 
 
 
-
-
+    
+    //Si afegeix un producte el valor (que comença a 0) aumenta +1
+    //Ademes imprimeix alguns valors que hem agafat del menu.json (mati o tarda) per mostrar un ticket
     function sumarProducte(id) {
         let input = document.querySelector("input[ id='" + id + "']");
         input.value++;
@@ -134,6 +140,9 @@ window.onload = function () {
 
     }
 
+    //Si afegeix un producte el valor (que comença a 0) aumenta -1
+    //Tambe imprimeix els valors que volem del menu.json
+    //Si despres de afegir elements a la comanda els treus tots, el boto de comprar no estara disponible
     function restarProducte(id) {
         let input = document.querySelector("input[ id='" + id + "']");
 
@@ -160,6 +169,7 @@ window.onload = function () {
 
     }
 
+    //Agafem tots els elemtents del document i recorrem uns 
     function sumaCarrito() {
         let inputs = document.querySelectorAll("input[type=text]");
 
@@ -210,6 +220,8 @@ window.onload = function () {
             suma += sumaproducte;
 
         }
+
+        //Desactiva el disabled del borton comprar quan es modifica la compra
         let botonComprar= document.getElementById("botonComprar")
 
         if (suma == 0) {
@@ -220,7 +232,7 @@ window.onload = function () {
         }
 
 
-
+        //
         document.getElementById("com").innerHTML = "Total Gastat: " + suma.toFixed(2) + "€";
 
 
