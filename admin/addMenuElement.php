@@ -20,7 +20,7 @@ $menuRead = fread($menuFile, filesize("../menu.json"));
 fclose($menuFile);
 $arrayMenus = json_decode($menuRead, true);
 
-$target_dir = "/css/menu/";
+$target_dir = "css/menu/";
 $target_file = $target_dir . basename($_FILES["foto"]["name"]);
 $producteNou = array(
     "nom"=>utf8_encode($_POST["nomProducte"]),
@@ -43,8 +43,9 @@ if($nouProducteHorari== "dia"){
 $jsonMenu = json_encode($arrayMenus, JSON_UNESCAPED_UNICODE);
 
 
-if(file_put_contents("../menu.json", $jsonMenu)!=false  && move_uploaded_file($_FILES["foto"]["tmp_name"], "..".$target_file) ){
-    header("Location: /projecteCantina/admin/adminMenu.php");
+if(file_put_contents("../menu.json", $jsonMenu)!=false  && move_uploaded_file($_FILES["foto"]["tmp_name"], "../".$target_file) ){
+  //  header("Location: /projecteCantina/admin/adminMenu.php");
+    echo $target_file;
 }
 
 
