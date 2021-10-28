@@ -14,8 +14,7 @@ session_start();
     <title>Validacio</title>
     <script src="js/validate.js"></script>
     <link href="validacio.css" rel="stylesheet" type="text/css">
-    <script src="sweetalert/docs/assets/sweetalert/sweetalert.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="sweetalert/src/sweetalert.css">
+    <link href="normalize.css" rel="stylesheet" type="text/css">
 
 
     <?php

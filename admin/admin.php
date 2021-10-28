@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../capçalera.css" rel="stylesheet" type="text/css">
     <link href="admin.css" rel="stylesheet" type="text/css">
+    <link href="../normalize.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 
     <?php
@@ -18,7 +19,7 @@
         foreach ($arrayMenus as $menu) {
             foreach ($menu as $menuElement) {
                 if ($menuElement["id"] == $id) {
-                    $productInfoText = "<div>Producte:" . $menuElement["nom"] . " x " . $producte["quantitat"] . " unitat/s</div>";
+                    $productInfoText = "<div>Producte: " . $menuElement["nom"] . " x " . $producte["quantitat"] . " unitat/s</div>";
                 }
             }
         }
@@ -84,13 +85,13 @@ if (file_exists($filename)) {
                 $text .= productInfo($arrayMenus, $idProducte, $producte);
             }
         }
-
         $text .= "<p><b>Total: " . $comanda["total"] . "€</b></p>
-        </div>
-    </div> ";
+            </div>
+            </div>";
         echo $text;
     }
 }
+
 
 
 ?>

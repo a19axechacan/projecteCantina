@@ -1,11 +1,35 @@
-#total{
-    font-size: 500%;
+.requadro {
+    margin-left: 600px;
+}
 
+#total{
+    font-size: 300%;
 }
 
 .dadescli{
-
-
-
     font-size: 200%;
+}
+
+#dades {
+    text-align: left;
+}
+
+#despedida {
+    font-size: 400%;
+}
+
+#sitiocasa {
+    padding-left: 175px;
+}
+
+#casa {
+    transition: .2s ease;
+    -moz-transition: .2s ease;
+    -webkit-transition: all .2s ease-in-out;
+}
+
+#casa:hover {
+    transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -webkit-transform: scale(1.4);
 }
