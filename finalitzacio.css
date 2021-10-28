@@ -1,11 +1,17 @@
 #total{
-    font-size: 500%;
-
+    font-size: 300%;
 }
 
 .dadescli{
-
-
-
     font-size: 200%;
+    margin-left: 600px;
+    text-align: left;
+}
+
+.cuerpo {
+    text-align: center;
+}
+
+#despedida {
+    font-size: 400%;
 }
