@@ -62,7 +62,7 @@
 
         </div>
         <div>
-            <form name="producteNouForm" id="producteNouForm" action="addMenuElement.php" method="POST">
+            <form name="producteNouForm" id="producteNouForm" action="addMenuElement.php" method="POST"  enctype="multipart/form-data">
                 <h2>Nou producte</h2>
 
                 <div>
@@ -84,9 +84,14 @@
                         <option value="tarde">Tarde</option>
                     </select>
                 </div>
+                <div>
+                    <input type="file" name="foto" />
+                </div>
                 <button id="buttonAfegir" type="submit">Afegir producte</button>
         </div>
         </form>
+
+
 
     </div>
 </div>
