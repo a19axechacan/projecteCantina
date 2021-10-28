@@ -82,12 +82,13 @@
 
     
     function posarcoses($menu){
-        $form="<div>";
+
+        $form = "";
         foreach ($menu as $element) {
             $form .= "  <h4 id=" . "c".$element['id'] . " class='card'>" . "</h4> ";
             
         }
-        return $form. "</div>";
+        return $form;
     }
 
 
@@ -112,8 +113,9 @@
                 </div>
 
                 <?php
-                echo posarcoses($menuDia);
-                echo posarcoses($menuTarde);
+                $divunic = "<div id ='menusjunts'>". posarcoses($menuDia).posarcoses($menuTarde) . "</div>";
+
+                echo $divunic;
 
                 ?>
 
