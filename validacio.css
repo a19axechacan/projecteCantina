@@ -27,6 +27,8 @@
     display: grid;
     grid-template-columns: 70.5% 29.5%;
     border-style: groove;
+    margin-top: 50px;
+    margin-bottom: 100px;
 }
 
 .tiquet-container {
