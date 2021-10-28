@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="capçalera.css" rel="stylesheet" type="text/css">
     <link href="index.css" rel="stylesheet" type="text/css">
-    <title>Landig Page</title>
+    <title>Landing Page</title>
 
     <?php
     include("assets/header.php");

@@ -79,15 +79,14 @@ function exportaComanda($arrayJson)
     $text = json_encode($arrayJson);
 
     $filename = "admin/comandesjson/" . date("d-m-Y") . ".json";
-    $file = "";
-    $compra = "";
+
 
     if (file_exists($filename) == true) {
 
         $file = fopen($filename, "r");
         $compra = json_decode(fread($file, filesize($filename)), true);
         fclose($file);
-        $compraActualitzada = array_push($compra["comandes"], $arrayJson);
+        array_push($compra["comandes"], $arrayJson);
 
         $file = fopen($filename, "w");
         fwrite($file, json_encode($compra));
@@ -97,7 +96,7 @@ function exportaComanda($arrayJson)
 
         touch($filename);
         $file = fopen($filename, "w");
-        fwrite($file, "{admin\"comandes\":[" . $text . "]}");
+        fwrite($file, "{\"comandes\":[" . $text . "]}");
         fclose($file);
 
 
