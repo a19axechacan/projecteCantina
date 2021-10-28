@@ -7,7 +7,7 @@ window.onload = function () {
     //Es desabilita l'opcio fins que afegeixi un element
     botonComprar.disabled= true;
 
-    document.getElementById("botonComprar").addEventListener("click", pasajson());
+
 
 
 
@@ -60,66 +60,11 @@ window.onload = function () {
 
 
 
-
-
-
-
-
-
-
-
-
-    function pasajson() {
-        let inputs = document.querySelectorAll("input[type=text]");
-
-        let compra = [];
-
-        for (let index = 0; index < inputs.length; index++) {
-
-
-            for (element of json.dia) {
-                if (element.id == index) {
-                    let item = {
-                        "nom": element.nom,
-                        "id": element.id,
-                        "quantitat": inputs[index].value
-                    }
-
-                    if (item.quantitat > 0) {
-                        compra.push(item);
-                    }
-                }
-
-            }
-
-            for (element of json.tarde) {
-                if (element.id == index) {
-                    let item = {
-                        "nom": element.nom,
-                        "id": element.id,
-                        "quantitat": parseInt(inputs[index].value)
-                    }
-
-                    if (item.quantitat > 0) {
-                        compra.push(item);
-                    }
-                }
-            }
-
-
-        };
-
-        document.getElementById("jsoncompra").value = JSON.stringify(compra);
-
-    }
-
-
-
-
     
     //Si afegeix un producte el valor (que comença a 0) aumenta +1
     //Ademes imprimeix alguns valors que hem agafat del menu.json (mati o tarda) per mostrar un ticket
     function sumarProducte(id) {
+
         let input = document.querySelector("input[ id='" + id + "']");
         input.value++;
         document.getElementById("c" + id).style.display = "block";
@@ -172,15 +117,15 @@ window.onload = function () {
 
     //Agafem tots els elemtents del document i recorrem uns 
     function sumaCarrito() {
+        console.log("sumando");
         let inputs = document.querySelectorAll("input[type=text]");
-
         let compra = [];
 
+        console.log(json.dia);
         for (let index = 0; index < inputs.length; index++) {
-
-
             for (element of json.dia) {
-                if (element.id == index) {
+                console.log(element.id+"--"+inputs[index].id);
+                if (element.id == inputs[index].id) {
                     let item = {
                         "nom": element.nom,
                         "id": element.id,
@@ -194,9 +139,8 @@ window.onload = function () {
                 }
 
             }
-
             for (element of json.tarde) {
-                if (element.id == index) {
+                if (element.id == inputs[index].id) {
                     let item = {
                         "nom": element.nom,
                         "id": element.id,
