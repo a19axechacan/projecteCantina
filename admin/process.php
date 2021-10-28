@@ -1,5 +1,22 @@
 <?php
 
+function repeatedId($arrayMenus, $novaId): bool
+{
+    $repeated = false;
+    foreach ($arrayMenus as $menu){
+        foreach ($menu as $element ){
+            if($novaId==$element["id"]){
+                $repeated = true;
+            }
+        }
+    }
+    return $repeated;
+}
+
+
+
+
+
 
 $nouProducteHorari = $_POST["horariProducte"];
 
@@ -11,7 +28,6 @@ $arrayMenus = json_decode($menuRead, true);
 
 
 $producteNou = array(
-    "id"=>77,
     "nom"=>utf8_encode($_POST["nomProducte"]),
     "descripció"=>utf8_encode($_POST["descProducte"]),
     "imatge"=>"css/menu/150.png",
@@ -20,6 +36,12 @@ $producteNou = array(
 
 
 
+
+
+do {
+    $novaId = rand(0,13);
+    $producteNou["id"]=$novaId;
+} while (repeatedId($arrayMenus, $novaId)==true);
 if(strcmp($nouProducteHorari, "dia")){
     array_push($arrayMenus["dia"],$producteNou);
 }else{
