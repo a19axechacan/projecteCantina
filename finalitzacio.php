@@ -20,6 +20,9 @@ session_start();
 
 </head>
 <body>
+<div class="requadro">
+
+
 <div class="cuerpo">
     <h1>Moltes gràcies per la teva compra</h1>
 
@@ -163,7 +166,9 @@ exportaComanda($jsonArrayComandes);
 ?>
 
     <h1 id="despedida">T'esperem demà</h1>
+    <h1 id="sitiocasa"><a href="/projecteCantina/index.php"><img id="casa" src="../css/casa.png" width="100px" height="100px"></a></h1>
 
+</div>
 </div>
 </body>
 
