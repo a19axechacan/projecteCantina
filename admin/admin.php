@@ -101,6 +101,10 @@ if (file_exists($filename)) {
         echo getMissatgeError();
     }
     ?>
+    <div id=modificarTicket>
+        <form action="adminMenu.php">
+        <input type="submit" id="botonModificarTicket" value="Modificar ticket" /></form>
+    </div>
 </div>
 </body>
 

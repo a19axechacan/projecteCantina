@@ -126,6 +126,7 @@ window.onload = function () {
 
         for (element of json.dia) {
             if (element.id == id) {
+                console.log("dias ")
                 document.getElementById("c" + id).innerHTML = input.value + "x " + element.nom + " -" + element.preu + "€ -"
             }
 
@@ -183,8 +184,8 @@ window.onload = function () {
                     let item = {
                         "nom": element.nom,
                         "id": element.id,
-                        "preu": element.preu,
-                        "quantitat": inputs[index].value
+                        "preu": parseFloat(element.preu),
+                        "quantitat": parseInt(inputs[index].value)
                     }
 
                     if (item.quantitat > 0) {

@@ -32,6 +32,7 @@
 */
 
 
+    $coses = null;
     $menuFile = fopen("menu.json", "r");
 
     $menuRead = fread($menuFile, filesize("menu.json"));
@@ -51,7 +52,8 @@
 
     $form .= "<div id='menuTarde' class='menu-container'>";
     $form.= writeMenu($menuTarde);
-    
+
+
 
     $form.= "</div>";
     $form .= "<input type='hidden' id ='horariDia' name='horariDia'>";
@@ -76,6 +78,20 @@
         }
         return $form;
     }
+
+
+    
+    function posarcoses($menu){
+
+        $form = "";
+        foreach ($menu as $element) {
+            $form .= "  <h4 id=" . "c".$element['id'] . " class='card'>" . "</h4> ";
+            
+        }
+        return $form;
+    }
+
+
     
     ?>
 
@@ -95,21 +111,14 @@
                 <div>
                     <h3 id=tuCompra>El teu tiquet:</h3>
                 </div>
-                
-                <div>
-                    <h4 id="c0" class="card"></h4>
-                    <h4 id="c1" class="card"></h4>
-                    <h4 id="c2" class="card"></h4>
-                    <h4 id="c3" class="card"></h4>
-                    <h4 id="c4" class="card"></h4>
-                    <h4 id="c5" class="card"></h4>
-                    <h4 id="c6" class="card"></h4>
-                    <h4 id="c7" class="card"></h4>
-                    <h4 id="c8" class="card"></h4>
-                    <h4 id="c9" class="card"></h4>
-                    <h4 id="c10" class="card"></h4>
-                    <h4 id="c11" class="card"></h4>
-                </div>
+
+                <?php
+                $divunic = "<div id ='menusjunts'>". posarcoses($menuDia).posarcoses($menuTarde) . "</div>";
+
+                echo $divunic;
+
+                ?>
+
                 <div>
                     <h4 id="com">Total gastat: 0€</h4>
                 </div>

@@ -8,11 +8,13 @@ body {
 }
 
 header {
+    color: rgb(2, 2, 50);
     background-color: #a4ebf3;
     padding: 10px;
 }
 
 .cuerpo {
+    color: rgb(2, 2, 50);
     margin-left: 100px;
     margin-right: 100px;
     margin-top: 10px;
