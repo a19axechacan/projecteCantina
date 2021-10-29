@@ -21,7 +21,7 @@
 
     <?php
 
-/*
+
 
     if(empty($_COOKIE["compraRealitzada"])){
 
@@ -29,7 +29,7 @@
        header("Location: error.php");
     }
 
-*/
+
 
     $coses = null;
     $menuFile = fopen("menu.json", "r");
