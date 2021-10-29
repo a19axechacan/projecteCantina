@@ -44,8 +44,8 @@ $jsonMenu = json_encode($arrayMenus, JSON_UNESCAPED_UNICODE);
 
 
 if(file_put_contents("../menu.json", $jsonMenu)!=false  && move_uploaded_file($_FILES["foto"]["tmp_name"], "../".$target_file) ){
-  //  header("Location: /projecteCantina/admin/adminMenu.php");
-    echo $target_file;
+   header("Location: /projecteCantina/admin/adminMenu.php");
+  //  echo $target_file;
 }
 
 
