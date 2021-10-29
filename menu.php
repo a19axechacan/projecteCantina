@@ -68,7 +68,7 @@
                     <label  for=" . $element['id'] . ">" . $element['nom'] . ":</label>
                     <br>
                 <button type='button' class='resta'>-</button> 
-                <input size='1' type='text' id=" . $element['id'] . " name='" . $element['id'] .  "' value='0'   class='coger'>
+                <input size='1' type='text' id=" . $element['id'] . " name='" . $element['id'] .  "' value='0'   class='coger' >
                 <button type='button' class='suma'>+</button> 
                 <br><br>
                 </div>
