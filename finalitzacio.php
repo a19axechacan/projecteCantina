@@ -166,7 +166,7 @@ exportaComanda($jsonArrayComandes);
 ?>
 
     <h1 id="despedida">T'esperem demà</h1>
-    <h1 id="sitiocasa"><a href="/projecteCantina/index.php"><img id="casa" src="../css/casa.png" width="100px" height="100px"></a></h1>
+    <h1 id="sitiocasa"><a href="/projecteCantina/index.php"><img id="casa" src="/projecteCantina/css/casa.png" width="100px" height="100px"></a></h1>
 
 </div>
 </div>
