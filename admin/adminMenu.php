@@ -23,10 +23,8 @@
 
 </head>
 
-<h1>Editar menú</h1>
-
 <div class="cuerpo">
-
+    <h1>Editar menú</h1>
     <div id="menu-container">
         <div>
             <?php
@@ -65,35 +63,42 @@
         <div>
             <form name="producteNouForm" id="producteNouForm" action="addMenuElement.php" method="POST"  enctype="multipart/form-data">
                 <h2>Nou producte</h2>
-
-                <div>
-                    <label for='nomProducte'>Nom producte: </label>
-                    <input type='text' id='nomProducte' name='nomProducte'>
-                </div>
-                <div>
-                    <label for='descProducte'>Descripció producte: </label>
-                    <input type='text' id='descProducte' name='descProducte'>
-                </div>
-                <div>
-                    <label for='preuProducte'>Preu: </label>
-                    <input type='text' id='preuProducte' name='preuProducte' size="2">
-                </div>
-
-                <div>
-                    <select name="horariProducte" id="horariProducte">
-                        <option value="dia">Dia</option>
-                        <option value="tarde">Tarde</option>
-                    </select>
-                </div>
-                <div>
-                    <input type="file" name="foto" />
-                </div>
-                <button id="buttonAfegir" type="submit">Afegir producte</button>
-        </div>
+                <table>
+                    <tr>
+                        <td id="nom"><label for='nomProducte'>Nom producte: </label></td>
+                        <td><input type='text' id='nomProducte' name='nomProducte'><br></td>
+                    </tr>
+                    <tr>
+                        <td><br><label for='descProducte'>Descripció producte: </label></td>
+                        <td><input type='text' id='descProducte' name='descProducte'><br></td>
+                    </tr>
+                    <tr>
+                        <td><br><label for='preuProducte'>Preu: </label></td>
+                        <td><input type='text' id='preuProducte' name='preuProducte' size="2"><br></td>
+                    </tr>
+                    <tr>
+                        <td><br><label for='Menu'>Menu de: </label></td>
+                        <td><select name="horariProducte" id="horariProducte">
+                            <option value="dia">Dia</option>
+                            <option value="tarde">Tarde</option>
+                            </select><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><br><label for='imtage'>Imatge: </label></td>
+                        <td><input id="foto" type="file" name="foto" /><br></td>
+                    </tr>
+                    </table>
+                    <tr>
+                        <div id="botoAfegir">
+                            <td><br><button id="buttonAfegir" type="button">Afegir producte</button></td>
+                        </div>
+                    </tr> 
         </form>
 
 
 
+        </div>
     </div>
 </div>
 </body>
