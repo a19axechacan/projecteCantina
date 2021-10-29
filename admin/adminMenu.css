@@ -2,3 +2,28 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+#producteNouForm {
+    padding-left: 5%;
+    padding-bottom: 5%;
+    margin-right: 53%;
+    border-left-style: groove;
+    border-bottom-style: groove;
+}
+
+#nom {
+    height: 36px;
+}
+
+#botoAfegir {
+    text-align: center;
+}
+
+#buttonAfegir {
+    width: 125px;
+    height: 60px;
+    background-color: #ccf2f4;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 8px 8px 8px 8px;
+}
