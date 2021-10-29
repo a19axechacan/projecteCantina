@@ -124,7 +124,6 @@ window.onload = function () {
         console.log(json.dia);
         for (let index = 0; index < inputs.length; index++) {
             for (element of json.dia) {
-                console.log(element.id+"--"+inputs[index].id);
                 if (element.id == inputs[index].id) {
                     let item = {
                         "nom": element.nom,
