@@ -44,7 +44,7 @@
                          </thead> ";
                 foreach ($menu as $elementMenu) {
                     echo "<tr class='menu-element'>
-                        <td><label for='" . $elementMenu["id"] . "'>" . $elementMenu["id"] . "    </label></td>
+                        <td><label for='" . $elementMenu["id"] ."'>" . $elementMenu["id"] . "    </label></td>
                          <input type='hidden' name='" . $elementMenu["id"] . "'  value='" . $elementMenu["id"] . "' >
                         <td><input type='text' id='" . $elementMenu["id"] . "' name='" . $elementMenu["id"] . "nom'  value='" . $elementMenu["nom"] . "' readonly ></td>
                         <td><input type='text' id='" . $elementMenu["id"] . "' name='" . $elementMenu["id"] . "desc'  value='" . $elementMenu["descripció"] . "' size='35' readonly></td>
@@ -53,6 +53,7 @@
                         </tr>";
                 }
                 echo "</table>";
+
             }
             ?>
             <form id="eliminarProducteForm" name="eliminarProducteForm" action="deleteElement.php" method="post">
