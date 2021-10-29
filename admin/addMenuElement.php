@@ -25,11 +25,7 @@ $target_file = $target_dir . basename($_FILES["foto"]["name"]);
 $producteNou = array(
     "nom"=>utf8_encode($_POST["nomProducte"]),
     "descripció"=>utf8_encode($_POST["descProducte"]),
-<<<<<<< HEAD:admin/addMenuItem.php
-    "imatge"=>"css/menu/150.png",
-=======
     "imatge"=>"$target_file",
->>>>>>> a0602588b06b49f2b877683b571cca9d03d9c143:admin/addMenuElement.php
     "preu"=> floatval($_POST["preuProducte"])
 );
 
@@ -37,13 +33,8 @@ do {
     $novaId = rand(0,999);
     $producteNou["id"]=$novaId;
 } while (repeatedId($arrayMenus, $novaId)==true);
-<<<<<<< HEAD:admin/addMenuItem.php
-echo $nouProducteHorari;
-if($nouProducteHorari== "dia"   ){
-=======
 
 if($nouProducteHorari== "dia"){
->>>>>>> a0602588b06b49f2b877683b571cca9d03d9c143:admin/addMenuElement.php
     array_push($arrayMenus["dia"],$producteNou);
 }else{
     array_push($arrayMenus["tarde"],$producteNou);
