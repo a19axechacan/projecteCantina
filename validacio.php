@@ -164,26 +164,26 @@ $_SESSION["compra"] = $llistaJson;
                 <h3>Dades personals</h3>
             </div>
             <div id="formulari">
-                <form method='POST' action='finalitzacio.php' name='dades'>
+                <form method='POST' action='finalitzacio.php' name='dades' id="formValidacio">
                     <p>Omple aquests camps per continuar amb la compra</p>
                     <table id="tabla">
                         <tr>
                             <td>Nom:</td>
-                            <td colspan='3'><input type='TEXT' name='nombre' size='25' required></td>
+                            <td colspan='3'><input type='TEXT' name='nombre' size='25' required id="nombre"></td>
                         </tr>
                         <tr>
                             <td><br>Telefon:</td>
-                            <td colspan='3'><br><input type='TEXT' name='telefono' size='25' required></td>
+                            <td colspan='3'><br><input type='TEXT' name='telefono' size='25' required id="telefono"></td>
                         </tr>
                         <tr>
                             <td><br>Email:</td>
-                            <td colspan='3'><br><input type='TEXT' name='email' size='25' required></td>
+                            <td colspan='3'><br><input type='TEXT' name='email' size='25' required id="email"></td>
                         </tr>
                     </Table>
 
             </div>
             <div id="enviar">
-                <input TYPE='SUBMIT' value='Comprar' id='enviaform' onclick="return validar()">
+                <button TYPE='button'  id='enviaform'>Comprar</button>
                 </form>
             </div>
         </div>
