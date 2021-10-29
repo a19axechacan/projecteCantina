@@ -1,14 +1,15 @@
-window.onload = function () {
+window.onload = function (){
 
-
-
+    let formEliminarProducte = document.getElementById("eliminarProducteForm");
+    let inputEliminarProducte=  document.getElementById("selectedId");
     document.getElementById("menu-container").addEventListener("click", function (e) {
+        if (e.target.classList.contains("buttonEliminar")) {
+          inputEliminarProducte.value = e.target.id;
 
-        let formEliminar = document.getElementById("deleteItemForm");
+          if(confirm("Segur que vols eliminar aquest element del menú?")){
+              formEliminarProducte.submit();
+          }else alert("Acció cancelada");
 
-        if (e.target.classList.contains("eliminar")) {
-            document.getElementById("selectedItem").value=e.target.id;
-            formEliminar.submit();
         }
     });
 

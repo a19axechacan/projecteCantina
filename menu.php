@@ -31,7 +31,6 @@
 
 */
 
-
     $coses = null;
     $menuFile = fopen("menu.json", "r");
 

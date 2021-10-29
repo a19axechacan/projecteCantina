@@ -31,7 +31,7 @@
 .compra-container {
     display: grid;
     grid-template-rows: 15% 60% 11.25% auto;
-    height: 100%;
+    height: 97.5%;
 }
 
 #tuCompra {
