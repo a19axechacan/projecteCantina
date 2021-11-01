@@ -9,7 +9,6 @@ window.onload = function () {
         if(validar()==true){
             formValidacio.submit();
         }else{
-            alert("mal");
         }
     });
 
@@ -52,7 +51,7 @@ function validar() {
     }
 
 
-    else if (email == "" || !(email.endsWith("@inspedralbes.cat") && email.length <= 18)) {
+    else if (email == "" || !(email.endsWith("@inspedralbes.cat") && email.length > 18)) {
         alert("email mal!");
         return false;
     }
