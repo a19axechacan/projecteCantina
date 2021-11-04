@@ -62,3 +62,10 @@
     border: 1px solid #ccc;
     border-radius: 8px 8px 8px 8px;
 }
+
+.imgLocked{
+filter: opacity(30%);
+}
+.disabled{
+    pointer-events: none;
+}

@@ -10,7 +10,6 @@ window.onload = function (){
           if(confirm("Segur que vols eliminar aquest element del menú?")){
               formEliminarProducte.submit();
           }else alert("Acció cancelada");
-
         }
     });
 
@@ -28,6 +27,40 @@ window.onload = function (){
         alert("Dades invàlides");
     }
     })
+    //---------------------------------------------------------------------------------------------------
+    //Funcionalitats Activa/desactiva producte
+
+
+    let formActivarDesactivarProd = document.getElementById("activarDesactivarProducteForm");
+    let inputActivarDesactivarProd=  document.getElementById("selectedIdActivarDesactivar");
+    document.getElementById("menu-container").addEventListener("click", function (e) {
+        if (e.target.classList.contains("buttonActivar")) {
+            inputActivarDesactivarProd.value = e.target.id;
+            if(confirm("Segur que vols realitzar aquesta acció?")){
+                formActivarDesactivarProd.submit();
+            }else alert("Acció cancelada");
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

@@ -22,13 +22,11 @@
     <?php
 
 
+    if (empty($_COOKIE["compraRealitzada"])) {
 
-    if(empty($_COOKIE["compraRealitzada"])){
-
-    }else{
-       header("Location: error.php");
+    } else {
+        header("Location: error.php");
     }
-
 
 
     $coses = null;
@@ -46,31 +44,45 @@
 
 
     $form = "<div id='menuDia' class='menu-container'>";
-    $form.= writeMenu($menuDia);
-    $form.= "</div>";
+    $form .= writeMenu($menuDia);
+    $form .= "</div>";
 
     $form .= "<div id='menuTarde' class='menu-container'>";
-    $form.= writeMenu($menuTarde);
+    $form .= writeMenu($menuTarde);
 
 
-
-    $form.= "</div>";
+    $form .= "</div>";
     $form .= "<input type='hidden' id ='horariDia' name='horariDia'>";
     $form .= "<input type='hidden' id ='jsoncompra' name='jsoncompra'>";
 
 
-    function writeMenu($menu){
-        $form="";
+    function writeMenu($menu)
+    {
+        $form = "";
         foreach ($menu as $element) {
-            $form .= "  <div id=" . $element['id'] . ">" . "
-            <img src=".$element['imatge']." width='100%' height='277px'>
-            <div class='menu-item-label'>
+            $form .= "  <div id=" . $element['id'] . ">";
+            if($element["activat"]=="true"){
+               $form.= "<img src=" . $element['imatge'] . " width='100%' height='277px'>";
+            }else{
+                $form.= "<img class='imgLocked'  src=" . $element['imatge'] . " width='100%' height='277px'>";
+            }
+           
+           $form.= "<div class='menu-item-label'>
                     <label  for=" . $element['id'] . ">" . $element['nom'] . ":</label>
-                    <br>
-                <button type='button' class='resta'>-</button> 
-                <input size='1' type='text' id=" . $element['id'] . " name='" . $element['id'] .  "' value='0'   class='coger' >
-                <button type='button' class='suma'>+</button> 
-                <br><br>
+                    <br>";
+
+            if ($element["activat"] == "true") {
+                $form .= "<button type='button' class='resta'>-</button> 
+                <input size='1' type='text' id=" . $element['id'] . " name='" . $element['id'] . "' value='0'   class='coger' >
+                <button type='button' class='suma'>+</button> ";
+            }else{
+                $form .= "<button type='button' class='disabled'>-</button> 
+                <input size='1' type='text' id=" . $element['id'] . " name='" . $element['id'] . "' value='0'   class='coger' readonly >
+                <button type='button' class='disabled'>+</button> ";
+            }
+
+
+           $form.= "<br><br>
                 </div>
                 </div>
                 ";
@@ -79,31 +91,30 @@
     }
 
 
-    
-    function posarcoses($menu){
+    function posarcoses($menu)
+    {
 
         $form = "";
         foreach ($menu as $element) {
-            $form .= "  <h4 id=" . "c".$element['id'] . " class='card'>" . "</h4> ";
-            
+            $form .= "  <h4 id=" . "c" . $element['id'] . " class='card'>" . "</h4> ";
+
         }
         return $form;
     }
 
 
-    
     ?>
 
     <div class="menu-list">
         <div id="menu">
-                <form id='formMenu' action='validacio.php' method='post' >
-                   <?php echo $form?>
-                   <input type="hidden"  id="json" value = "
+            <form id='formMenu' action='validacio.php' method='post'>
+                <?php echo $form ?>
+                <input type="hidden" id="json" value="
                             <?php
-                            echo htmlspecialchars($menuRead)
-                   ?>
+                echo htmlspecialchars($menuRead)
+                ?>
                                 ">
-                
+
         </div>
         <div id="compra">
             <div class="compra-container">
@@ -112,7 +123,7 @@
                 </div>
 
                 <?php
-                $divunic = "<div id ='menusjunts'>". posarcoses($menuDia).posarcoses($menuTarde) . "</div>";
+                $divunic = "<div id ='menusjunts'>" . posarcoses($menuDia) . posarcoses($menuTarde) . "</div>";
 
                 echo $divunic;
 
@@ -122,18 +133,19 @@
                     <h4 id="com">Total gastat: 0€</h4>
                 </div>
                 <div id="finalTiquet">
-                    <button type='submit' id='botonComprar'>Comprar </button>  </form>
+                    <button type='submit' id='botonComprar'>Comprar</button>
+                    </form>
                 </div>
             </div>
-            
+
         </div>
-    </div>    
+    </div>
 
 </div>
 </body>
 
-    <?php
-    include("assets/footer.php");
-    ?>
+<?php
+include("assets/footer.php");
+?>
 
 </html>

@@ -28,7 +28,6 @@
     <div id="menu-container">
         <div>
             <?php
-
             foreach ($arrayMenus as $key => $menu) {
                 echo "<table> 
                         <h2>Menú " . $key . "</h2> 
@@ -47,15 +46,23 @@
                         <td><input type='text' id='" . $elementMenu["id"] . "' name='" . $elementMenu["id"] . "nom'  value='" . $elementMenu["nom"] . "' readonly ></td>
                         <td><input type='text' id='" . $elementMenu["id"] . "' name='" . $elementMenu["id"] . "desc'  value='" . $elementMenu["descripció"] . "' size='35' readonly></td>
                         <td><input type='text' id='" . $elementMenu["id"] . "' name='" . $elementMenu["id"] . "preu'  value='" . $elementMenu["preu"] . "' size='5' readonly></td>
-                        <td><button class='buttonEliminar' type='button' id='" . $elementMenu["id"] . "'>X</button></td>
-                        </tr>";
+                        <td><button class='buttonEliminar' type='button' id='" . $elementMenu["id"] . "'>X</button></td>";
+                    if ($elementMenu["activat"]=="true"){
+                        echo "<td><button class='buttonActivar' type='button' id='true-" . $elementMenu["id"] . "'>Desactivar</button></td>    ";
+                    }else{
+                        echo "<td><button class='buttonActivar' type='button' id='false-" . $elementMenu["id"] . "'>Activar</button></td>    ";
+                    }
                 }
-                echo "</table>";
+                echo "</tr></table>";
 
             }
             ?>
             <form id="eliminarProducteForm" name="eliminarProducteForm" action="deleteElement.php" method="post">
                 <input type="hidden" name="selectedId" id="selectedId">
+            </form>
+
+            <form id="activarDesactivarProducteForm" name="activatDesactivarProducteForm" action="activateDeactivateElement.php" method="post">
+                <input type="hidden" name="selectedProduct" id="selectedIdActivarDesactivar">
             </form>
 
 
